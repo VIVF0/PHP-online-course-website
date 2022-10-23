@@ -1,0 +1,25 @@
+.imagem1{
+    width: 500px; 
+    height: 400px;
+    background:url("velho.jpg");
+}
+.imagem2{
+    width: 500px; 
+    height: 400px;
+    background:url("velha.png");
+}
+.imagem3{
+    width: 500px; 
+    height: 400px;
+    background:url("chipconley.png");
+}
+.texto {
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    color:#fff;
+    text-align: center;
+    top: 100px;
+    width: 250px;
+    line-height: 30px;
+    height: 30px;
+}

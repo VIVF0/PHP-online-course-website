@@ -8,3 +8,104 @@ body{
     height: 2353px;
     background: linear-gradient(180deg, rgba(42, 141, 198, 0.38) 0%, rgba(5, 39, 248, 0.98) 100%);
 }
+.carrosel{
+    margin-top: 25px;
+}
+.empresas{
+    margin-top: 45px;
+    color: white;
+}
+.barra{
+    font-size: 75px;
+}
+.titulo_empresa{
+    font-size: 50px;
+    margin-top: -65px;
+    margin-left: 25px;
+}
+.img_empresas{
+    width: 720px;
+    height: 460px;
+}
+.box{
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 50px;
+    align-items: stretch;
+    align-items: 20px;
+}
+.img1{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin-top: 250px;
+    background: #FFFFFF;
+    border-radius: 25px;
+}
+.img2{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin-top: 250px;
+    margin-right: 500px;
+    background: #FFFFFF;
+    border-radius: 25px;
+}
+.img3{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin-top: 250px;
+    margin-right: -500px;
+    background: #FFFFFF;
+    border-radius: 25px;
+}
+.img4{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #FFFFFF;
+    border-radius: 25px;
+}
+.img5{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+
+    margin-right: -500px;
+    background: #FFFFFF;
+    border-radius: 25px;
+}
+.img6{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+
+    margin-right: 500px;
+    
+    background: #FFFFFF;
+    border-radius: 25px;
+}
+.cea{
+    width: 150px;
+    height: 150px;  
+    margin-top: 25px;
+    margin-left: 25px;
+}
+.ml{
+    width: 150px;
+    height: 125px;  
+    margin-top: 35px;
+    margin-left: 30px;
+}
+.amz{
+    width: 100px;
+    height: 100px;  
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.poli{  
+    margin-top: 50px;
+    margin-left: 00px;    
+}
