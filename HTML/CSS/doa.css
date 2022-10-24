@@ -1,0 +1,20 @@
+.Titulo{
+    font-size: 30px;
+    color: white;
+    margin-top: 25px;
+    text-align: center;
+}
+.qr_doa{
+    width: 400px;
+    height: 400px;
+    margin-top: 25px;
+}
+.subti{
+    font-size: 30px;
+    color: white;
+    margin-top: 25px;
+    text-align: center;    
+}
+body{
+    height: 700px;
+}
