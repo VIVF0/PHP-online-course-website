@@ -26,6 +26,7 @@ a.menu_link:visited{
     width: 100%;
     height: 100px;
     background: linear-gradient(180deg, #001AFF 0%, rgba(47, 162, 187, 0.88) 100%);  
+    position: fixed;
 }
 .opcoes{
     text-align: center;
