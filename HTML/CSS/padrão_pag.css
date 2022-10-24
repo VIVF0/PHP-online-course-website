@@ -179,7 +179,7 @@ li{
     height: 80px;
     align-items: center;
     margin-top: 160px;
-    background: linear-gradient(180deg, rgba(60, 4, 131, 0.25) 0%, rgba(175, 81, 142, 0.25) 66.15%, rgba(34, 3, 84, 0.25) 100%);
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.733) 0%, rgba(25, 14, 75, 0.25) 66.15%, rgba(150, 150, 151, 0.959) 100%);
     border-radius: 25px;
     border:none;
     font-size: 20px;
@@ -189,7 +189,7 @@ li{
     height: 80px;
     align-items: center;
     margin-top: 100px;
-    background: linear-gradient(180deg, rgba(60, 4, 131, 0.25) 0%, rgba(175, 81, 142, 0.25) 66.15%, rgba(34, 3, 84, 0.25) 100%);
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.733) 0%, rgba(25, 14, 75, 0.25) 66.15%, rgba(150, 150, 151, 0.959) 100%);
     border-radius: 25px;
     border:none;
     font-size: 20px;
@@ -199,17 +199,17 @@ li{
     height: 80px;
     align-items: center;
     margin-top: 100px;
-    background: linear-gradient(180deg, rgba(60, 4, 131, 0.25) 0%, rgba(175, 81, 142, 0.25) 66.15%, rgba(34, 3, 84, 0.25) 100%);
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.733) 0%, rgba(25, 14, 75, 0.25) 66.15%, rgba(150, 150, 151, 0.959) 100%);
     border-radius: 25px;
     border:none;
     font-size: 20px;
 }
 button:active{
-    background: linear-gradient(180deg, rgba(10, 10, 10, 0.733) 0%, rgba(25, 14, 75, 0.25) 66.15%, rgba(150, 150, 151, 0.959) 100%);
+    background: linear-gradient(180deg, rgba(60, 4, 131, 0.25) 0%, rgba(175, 81, 142, 0.25) 66.15%, rgba(34, 3, 84, 0.25) 100%);
     
 }
 button:visited{
-    background: linear-gradient(180deg, rgba(60, 4, 131, 0.25) 0%, rgba(175, 81, 142, 0.25) 66.15%, rgba(34, 3, 84, 0.25) 100%);
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.733) 0%, rgba(25, 14, 75, 0.25) 66.15%, rgba(150, 150, 151, 0.959) 100%);
 }
 /*.rodape{
     position: absolute;
