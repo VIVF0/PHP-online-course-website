@@ -1,15 +1,15 @@
 .imagem1{
-    width: 500px; 
+    width: 1000px; 
     height: 400px;
-    background:url("carrosel/velho.jpg");
+    background:url("carrosel/amigos-um-milhão.jpg");
 }
 .imagem2{
-    width: 500px; 
+    width: 1000px; 
     height: 400px;
     background:url("carrosel/velha.png");
 }
 .imagem3{
-    width: 500px; 
+    width: 1000px; 
     height: 400px;
     background:url("carrosel/chipconley.png");
 }
@@ -22,4 +22,7 @@
     width: 250px;
     line-height: 30px;
     height: 30px;
+}
+.carrossel{
+    position: fixed;
 }
