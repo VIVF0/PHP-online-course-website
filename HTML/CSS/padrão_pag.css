@@ -7,10 +7,11 @@ body{
 	box-sizing: border-box;
     /*height: 2000px;*/
     width: 100%;
-    background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);
+    /*background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);*/
+    background: #fafae0;
 }
 a:link{
-    color: white;
+    color: rgb(231, 213, 213);
     text-decoration: none;
 
 }
@@ -20,19 +21,19 @@ a:hover{
     -webkit-text-fill-color: transparent;
 }
 a:visited{
-    color: white;
+    color: rgba(241, 220, 220, 0.842);
     text-decoration: none;
 }
 .carrosel{
-    margin-top: 25px;
+    margin-top: -5px;
 }
 .empresas{
     margin-top: 45px;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 .barra{
     font-size: 75px;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 .titulo_empresa{
     font-size: 50px;
@@ -56,7 +57,7 @@ a:visited{
     width: 200px;
     height: 200px;
     margin-top: 250px;
-    background: #FFFFFF;
+    background: white;
     border-radius: 25px;
 }
 .img2{
@@ -65,7 +66,7 @@ a:visited{
     height: 200px;
     margin-top: 250px;
     margin-right: 500px;
-    background: #FFFFFF;
+    background: white;
     border-radius: 25px;
 }
 .img3{
@@ -74,14 +75,14 @@ a:visited{
     height: 200px;
     margin-top: 250px;
     margin-right: -500px;
-    background: #FFFFFF;
+    background: white;
     border-radius: 25px;
 }
 .img4{
     position: absolute;
     width: 200px;
     height: 200px;
-    background: #FFFFFF;
+    background: white;
     border-radius: 25px;
 }
 .img5{
@@ -89,7 +90,7 @@ a:visited{
     width: 200px;
     height: 200px;
     margin-right: -500px;
-    background: #FFFFFF;
+    background: white;
     border-radius: 25px;
 }
 .img6{
@@ -97,7 +98,7 @@ a:visited{
     width: 200px;
     height: 200px;
     margin-right: 500px;
-    background: #FFFFFF;
+    background: white;
     border-radius: 25px;
 }
 .cea{
@@ -124,7 +125,7 @@ a:visited{
 }
 .planos{
     margin-top: 550px;
-    color: #FFFFFF;
+    color: black;
 }
 .box1{
     align-content: center;

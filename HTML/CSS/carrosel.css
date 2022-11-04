@@ -26,3 +26,6 @@
 .carrossel{
     position: fixed;
 }
+.carousel_slide{
+    align-content: center;
+}
