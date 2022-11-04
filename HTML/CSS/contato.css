@@ -23,7 +23,7 @@ body{
     height: 800px;
     width: 100%;
     /*background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);*/
-    background: #fafae0;
+    background: white;
 }
 a:link{
     color: rgb(231, 213, 213);
@@ -46,6 +46,7 @@ button{
     margin-right: auto;
     margin-bottom: 20px;
     transition-duration: 0.4s;
+    position: relative;
 }
 textarea{
     height: 110px;
@@ -57,7 +58,7 @@ textarea{
 }
 .fundo{
     background: linear-gradient(180deg, rgba(118, 197, 243, 0.822) 0%, rgba(5, 39, 248, 0.98) 100%);
-    width: 600px;
+    width: 588px;
     height: 630px;
     margin-top: 20px;
     border-radius: 25px;

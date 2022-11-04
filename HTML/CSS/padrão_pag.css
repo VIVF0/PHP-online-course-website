@@ -7,8 +7,7 @@ body{
 	box-sizing: border-box;
     /*height: 2000px;*/
     width: 100%;
-    /*background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);*/
-    background: #fafae0;
+    background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);
 }
 a:link{
     color: rgb(231, 213, 213);
@@ -25,15 +24,15 @@ a:visited{
     text-decoration: none;
 }
 .carrosel{
-    margin-top: -5px;
+    margin-top: 10px;
 }
 .empresas{
     margin-top: 45px;
-    color: rgb(0, 0, 0);
+    color: white;
 }
 .barra{
     font-size: 75px;
-    color: rgb(0, 0, 0);
+    color: white;
 }
 .titulo_empresa{
     font-size: 50px;
@@ -125,7 +124,7 @@ a:visited{
 }
 .planos{
     margin-top: 550px;
-    color: black;
+    color: white;
 }
 .box1{
     align-content: center;
@@ -177,6 +176,7 @@ li{
     margin-left: 30px;
 }
 .btn_sobre{
+    border:none!important;
     width: 200px;
     height: 80px;
     align-items: center;
@@ -187,6 +187,7 @@ li{
     font-size: 20px;
 }
 .btn_sobre2{
+    border:none!important;
     width: 200px;
     height: 80px;
     align-items: center;
@@ -197,6 +198,7 @@ li{
     font-size: 20px;
 }
 .btn_sobre3{
+    border:none!important;
     width: 200px;
     height: 80px;
     align-items: center;
@@ -207,9 +209,15 @@ li{
     font-size: 20px;
 }
 button:active{
+    border:none!important;
     background: linear-gradient(180deg, rgba(60, 4, 131, 0.25) 0%, rgba(175, 81, 142, 0.25) 66.15%, rgba(34, 3, 84, 0.25) 100%);
     
 }
+button:hover{
+    border:none!important;
+    background: rgb(25, 0, 255);
+}
 button:visited{
+    border:none!important;
     background: linear-gradient(180deg, rgba(10, 10, 10, 0.733) 0%, rgba(25, 14, 75, 0.25) 66.15%, rgba(150, 150, 151, 0.959) 100%);
 }
