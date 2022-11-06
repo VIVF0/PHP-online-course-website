@@ -23,6 +23,6 @@
   $headers .= "From: $nome <$email>";
   //Enviar
   mail($destino, $assunto, $arquivo,$headers);
-  header("Location:ajuda.php");
+  header("Location:ajuda.html");
   die();
 ?>
