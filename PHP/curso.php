@@ -1,13 +1,13 @@
 <?php
 
-require 'config.php';
-include 'exibir_curso.php';
-require 'exibir_aula.php';
+require 'back/config.php';
+include 'back/exibir_curso.php';
+require 'back/exibir_aula.php';
 
 $obj_curso = new Cursos($mysql);
 $curso = $obj_curso->encontrarPorId($_GET['id_curso']);
 $aula = new Aulas($mysql);
-$aulas =$aula->exibirTodos($curso['id_curso']);
+$aulas =$aula->exibirTodosAulas($curso['id_curso']);
 
 ?>
 <!DOCTYPE html>
@@ -43,10 +43,9 @@ $aulas =$aula->exibirTodos($curso['id_curso']);
                         </a>
                     </h2>
                     <br>
-                    <p><?php echo nl2br($aula['descricao_aula']);?></p>
+                    <p><?php echo nl2br($aula['descricao_aula']);?></p><br><br>
                 <?php endforeach; ?>
             </div>
-
         </div>
     </body>
 </html>

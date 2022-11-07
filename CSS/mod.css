@@ -1,0 +1,44 @@
+.box{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    height: auto;
+    background: white;
+    border-radius: 25px;
+}
+a{
+    font-size: 18px;
+    background-color: blue;
+}
+.cont{
+    margin-bottom: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    color: blue;
+}
+textarea{
+    height: 145px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    font-size: 20px;
+    resize: vertical;
+    background-color: white;
+}
+input{
+    height: 22px;
+    width: 70%;
+    font-size: 18px;
+}
+.botao{
+    width: auto;
+    height: 30px;
+    font-size: 20px;
+}

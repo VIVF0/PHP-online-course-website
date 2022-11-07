@@ -4,6 +4,7 @@
     margin-top: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
+    height: 500px;
 }
 .box_curso{
     background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);

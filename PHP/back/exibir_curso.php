@@ -18,7 +18,7 @@ class Cursos
 
     public function encontrarPorId(string $id): array
     {
-        $selecionaCurso = $this->mysql->prepare("SELECT id_curso, titulo, descricao FROM cursos WHERE id_curso != ?");
+        $selecionaCurso = $this->mysql->prepare("SELECT id_curso, titulo, descricao FROM cursos WHERE id_curso = ?");
         $selecionaCurso->bind_param('s', $id);
         $selecionaCurso->execute();
         $curso = $selecionaCurso->get_result()->fetch_assoc();

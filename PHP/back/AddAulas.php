@@ -7,11 +7,18 @@ class addAulas
     {
         $this->mysql = $mysql;
     }
-    public function adicionar(string $titulo, string $descricao,string $ID_Curso,string $link_video): void
+    public function adicionar(string $titulo, string $descricao,string $titulo_curso,string $link_video): void
     {
-        $insereAula = $this->mysql->prepare('INSERT INTO aulas (id_aula,titulo_aula, descricao_aula,link_video,id_curso) VALUES(?,?,?,?);');
-        $insereAula->bind_param('ssss', $titulo, $descricao,$ID_Curso,$link_video);
-        $insereAula->execute();
+        $valida = $this->mysql->prepare('SELECT titulo, id_curso from cursos where titulo=?');
+        $valida->bind_param('s',$titulo_curso);
+        $valida->execute();
+        $curso= $valida->get_result()->fetch_assoc();
+        $id_curso=$curso['id_curso'];
+        if($id_curso!=null){
+            $insereAula = $this->mysql->prepare('INSERT INTO aulas (titulo_aula, descricao_aula,link_video,id_curso) VALUES(?,?,?,?)');
+            $insereAula->bind_param('ssss', $titulo, $descricao ,$link_video,$id_curso);
+            $insereAula->execute();
+        }
     }
     public function remover(string $id): void
     {

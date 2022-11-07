@@ -1,0 +1,64 @@
+.box{
+    width: 50%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    background: white;
+    margin-bottom: 55px;
+    border-radius: 20px;
+}
+#curso-admin{
+    background: black;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 18px;
+    border-radius: 12px;
+}
+.botao{
+    font-size: 20px;
+    margin-right: 50px;
+}
+*{
+	margin: 0;
+    padding: 0;
+}
+body{
+	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+	box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);
+}
+a:link{
+    color: rgb(0, 247, 255);
+    text-decoration: none;
+}
+a:hover{
+    background: -webkit-linear-gradient(180deg, #002fff -28.46%, #00FFE0 141.69%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+a:visited{
+    color: rgb(0, 247, 255);
+    text-decoration: none;
+}
+.botao-block{
+    background: black;
+    width: 30%;
+    height: 32px;
+    font-size: 25px;
+    border-radius: 12px;
+}
+.cont{
+    width: 88%;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-top: auto;
+    margin-right: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

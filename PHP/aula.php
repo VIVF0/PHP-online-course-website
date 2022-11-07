@@ -1,6 +1,6 @@
 <?php
-require 'config.php';
-require 'exibir_aula.php';
+require 'back/config.php';
+require 'back/exibir_aula.php';
 $obj_aula = new Aulas($mysql);
 $aulas = $obj_aula->encontrarPorId($_GET['id_aula']);
 ?>
@@ -26,8 +26,7 @@ $aulas = $obj_aula->encontrarPorId($_GET['id_aula']);
                 <br>
                 <p><?php echo nl2br($aulas['descricao_aula']);?></p>
             </div>
-            <br><br>
-            <iframe class="video" id="video" src="<?php echo $aulas['link_video']; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div></center>
+            <br><br></div></center>
+            <center><div class="video" style="padding: 0 0 0;position:relative;"><iframe src="<?php echo $aulas['link_video']; ?>" style="position:absolute;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script></center>
     </body>
 </html>

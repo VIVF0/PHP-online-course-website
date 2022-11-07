@@ -1,6 +1,6 @@
 <?php
-require 'config.php';
-include 'exibir_curso.php';
+require 'back/config.php';
+include 'back/exibir_curso.php';
 //$titulo="%".trim($_GET['busca_curso'])."%";
 /*if($titulo===null){*/
     $curso = new Cursos($mysql);
