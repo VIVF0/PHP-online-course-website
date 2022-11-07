@@ -1,3 +1,14 @@
+*{
+	margin: 0;
+    padding: 0;
+}
+body{
+	font-family: "Helvetica Neue", "Helvetica", "Helvetica", "Arial", "sans-serif";
+	box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);
+}
 .carrosel{
     margin-top: 10px;
 }
@@ -195,4 +206,18 @@ button:hover{
 button:visited{
     border:none!important;
     background: linear-gradient(180deg, rgba(10, 10, 10, 0.733) 0%, rgba(25, 14, 75, 0.25) 66.15%, rgba(150, 150, 151, 0.959) 100%);
+}
+a:link{
+    color: rgb(231, 213, 213);
+    text-decoration: none;
+
+}
+a:hover{
+    background: -webkit-linear-gradient(180deg, #FDFBFB -28.46%, #00FFE0 141.69%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+a:visited{
+    color: rgba(241, 220, 220, 0.842);
+    text-decoration: none;
 }

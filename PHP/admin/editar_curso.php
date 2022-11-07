@@ -22,7 +22,6 @@ $curt = $curso->encontrarPorId($_GET['id_curso']);
         <meta charset="UTF-8">
         <title>Editar Curso</title>
         <link rel="stylesheet" type="text/css" href="../../CSS/mod.css">
-        <link rel="stylesheet" type="text/css" href="../../CSS/pag_padrao.css">
     </head>
     <body>
         <div class="box">

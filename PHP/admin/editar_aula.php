@@ -19,7 +19,6 @@ $aul = $aula->encontrarPorId($_GET['id_aula']);
         <meta charset="UTF-8">
         <title>Editar Aula</title>
         <link rel="stylesheet" type="text/css" href="../../CSS/mod.css">
-        <link rel="stylesheet" type="text/css" href="../../CSS/pag_padrao.css">
     </head>
     <body>
         <div class="box">

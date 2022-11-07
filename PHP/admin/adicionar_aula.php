@@ -18,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <meta charset="UTF-8">
         <title>Adicionar Aula</title>
         <link rel="stylesheet" type="text/css" href="../../CSS/mod.css">
-        <link rel="stylesheet" type="text/css" href="../../CSS/pag_padrao.css">
     </head>
     <body>
         <div class="box">

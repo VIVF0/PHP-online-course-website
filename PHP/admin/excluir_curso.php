@@ -15,7 +15,6 @@ require '../back/redireciona.php';
         <meta charset="UTF-8">
         <title>Excluir Curso</title>
         <link rel="stylesheet" type="text/css" href="../../CSS/mod.css">
-        <link rel="stylesheet" type="text/css" href="../../CSS/pag_padrao.css">
     </head>
     <body>
         <br><br><br><br><br><br><br><br><br><div class="box">

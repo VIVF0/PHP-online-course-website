@@ -15,7 +15,6 @@ $aulas =$aula->exibirTodosAulas($curso['id_curso']);
     <head>
         <title><?php echo $curso['titulo']; ?></title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="../CSS/pag_padrao.css">
         <link rel="stylesheet" type="text/css" href="../CSS/curso.css">
     </head>
     <body>

@@ -1,21 +1,24 @@
 <?php
 require 'back/config.php';
 include 'back/exibir_curso.php';
-//$titulo="%".trim($_GET['busca_curso'])."%";
-/*if($titulo===null){*/
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $curso = new Cursos($mysql);
+    $cursos = $curso->encontrarPorTitulo($_POST['busca_curso']);
+}
+else{
     $curso = new Cursos($mysql);
     $cursos =$curso->exibirTodos();     
-/*} else{
+} 
+if(is_null($cursos)){
     $curso = new Cursos($mysql);
-    $cursos = $curso->encontrarPorTitulo($titulo);
-}*/
+    $cursos =$curso->exibirTodos(); 
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <title>Cursos</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="../CSS/pag_padrao.css">
         <link rel="stylesheet" type="text/css" href="../CSS/cursos.css">
     </head>
     <body>
@@ -25,9 +28,10 @@ include 'back/exibir_curso.php';
             <!--Carrosel-->
        </nav>
         <center><div class="container">
-            <form action="cursos.php" id="buscar_curso" method="GET" name="Pesquisa">    
+            <form action="cursos.php" id="buscar_curso" method="POST" name="Pesquisa">    
                 <input type="text" id="busca_curso" name="busca_curso" value="" placeholder="Busca de Curso">
                 <button><img class="img_lupa" src="../IMG/lupa-arredondada.png" ></button>
+                <?php echo $_POST['busca_curso'];?>
             </form>
             <?php foreach ($cursos as $curso) : ?>
                 <div class="box_curso">
