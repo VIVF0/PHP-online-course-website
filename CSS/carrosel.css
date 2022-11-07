@@ -1,17 +1,17 @@
 .imagem1{
     width: 1000px; 
     height: 400px;
-    background:url("carrosel/amigos-um-milhão.jpg");
+    background:url("../IMG/carrosel/amigos-um-milhão.jpg");
 }
 .imagem2{
     width: 1000px; 
     height: 400px;
-    background:url("carrosel/velha.png");
+    background:url("../IMG/carrosel/velha.png");
 }
 .imagem3{
     width: 1000px; 
     height: 400px;
-    background:url("carrosel/chipconley.png");
+    background:url("../IMG/carrosel/chipconley.png");
 }
 .texto {
     position: absolute;

@@ -1,17 +1,6 @@
-*{
-	margin: 0;
-    padding: 0;
-}
-body{
-	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-	box-sizing: border-box;
-    height: 2353px;
-    background: linear-gradient(180deg, rgba(42, 141, 198, 0.38) 0%, rgba(5, 39, 248, 0.98) 100%);
-}
 a.menu_link:link{
     color: #FDFBFB;
     text-decoration: none;
-
 }
 a.menu_link:hover{
     background: -webkit-linear-gradient(180deg, #FDFBFB -28.46%, #00FFE0 141.69%);

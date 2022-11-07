@@ -1,0 +1,16 @@
+.container{
+    margin-top: 20px;
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 800px;
+    color: white;
+}
+.img_play{
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+.aulas{
+    margin-bottom: 20px;
+}

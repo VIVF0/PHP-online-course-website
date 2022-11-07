@@ -1,0 +1,39 @@
+.container{
+    width: 60%;
+    background: #f5fffa;
+    margin-top: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.box_curso{
+    background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);
+    width: 80%;
+    text-align: justify;
+    height: 100px;
+    margin-bottom: 20px;
+    color: white;
+    border-radius: 20px;
+}
+#buscar_curso{
+    margin-bottom: 40px;
+}
+input{
+    width: 50%;
+    height: 30px;
+    margin-top: 25px;
+    font-size: 20px;
+}
+.img_lupa{
+    width:20px;
+    height:20px;
+}
+.cont{
+    width: 80%;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    height: 80%;
+}
