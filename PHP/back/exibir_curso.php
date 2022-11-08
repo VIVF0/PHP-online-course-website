@@ -26,14 +26,11 @@ class Cursos
     }
     public function encontrarPorTitulo(string $titulo): array
     {
-        $var="%$titulo%";
-        /*$resultado = $this->mysql->query("SELECT id_curso, titulo, descricao FROM cursos WHERE titulo like "."$var".";");
-        $cursos = $resultado->fetch_all(MYSQLI_ASSOC);
-        return $cursos;*/
-        $selecionaCurso = $this->mysql->prepare("SELECT id_curso, titulo, descricao FROM cursos WHERE titulo like ?;");
-        $selecionaCurso->bind_param('s', $var);
-        $selecionaCurso->execute();
-        $curso[] = $selecionaCurso->get_result()->fetch_assoc();
-        return $curso;
+        $result = mysqli_query($this->mysql,"SELECT * FROM cursos WHERE titulo like '".$titulo."%'"); 
+        $cont=mysqli_num_rows($result);
+        for($i=0;$i<$cont;$i++){     
+            $cursos[$i]=mysqli_fetch_assoc($result);
+        }
+        return $cursos;
     }
 }
