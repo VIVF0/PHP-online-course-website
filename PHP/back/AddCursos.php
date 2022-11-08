@@ -15,9 +15,12 @@ class addCursos
     }
     public function remover(string $id): void
     {
-        $removeraula = $this->mysql->prepare('DELETE FROM aulas  WHERE id_curso = ?');
-        $removeraula->bind_param('s', $id);
-        $removeraula->execute();
+        include "AddAvaliacao.php";
+        $avaliacao = new addAvaliacao($this->mysql);
+        $avaliacao->removerAvaliacoes($id);
+        include "AddAulas.php";
+        $aula = new addAulas($this->mysql);
+        $aula->removerAulas($id);
         $removerCurso = $this->mysql->prepare('DELETE FROM cursos  WHERE id_curso = ?');
         $removerCurso->bind_param('s', $id);
         $removerCurso->execute();

@@ -21,8 +21,13 @@ class addAulas
         }
     }
     public function remover(string $id): void
-    {
+    {   
         $removerAula = $this->mysql->prepare('DELETE FROM aulas WHERE id_aula = ?');
+        $removerAula->bind_param('s', $id);
+        $removerAula->execute();
+    }
+    public function removerAulas(string $id): void{
+        $removerAula = $this->mysql->prepare('DELETE FROM aulas WHERE id_curso = ?');
         $removerAula->bind_param('s', $id);
         $removerAula->execute();
     }

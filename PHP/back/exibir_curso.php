@@ -28,8 +28,16 @@ class Cursos
     {
         $result = mysqli_query($this->mysql,"SELECT * FROM cursos WHERE titulo like '".$titulo."%'"); 
         $cont=mysqli_num_rows($result);
-        for($i=0;$i<$cont;$i++){     
-            $cursos[$i]=mysqli_fetch_assoc($result);
+        if($cont!=0){
+            for($i=0;$i<$cont;$i++){     
+                $cursos[$i]=mysqli_fetch_assoc($result);
+            }
+        }else{
+            $cursos[]=[
+                'titulo'=>'Não Encontrado!',
+                'descricao'=> 'O Curso não foi encontrado',
+                'id_curso'=> '0',
+            ];
         }
         return $cursos;
     }

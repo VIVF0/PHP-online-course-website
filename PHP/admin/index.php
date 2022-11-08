@@ -3,10 +3,13 @@
 require '../back/config.php';
 include '../back/exibir_curso.php';
 include '../back/exibir_aula.php';
+include '../back/exibir_avaliacoes.php';
 $curso = new Cursos($mysql);
 $cursos = $curso->exibirTodos();
 $aula = new Aulas($mysql);
 $aulas = $aula->exibirAulas();
+$avaliacao = new Avaliacoes($mysql);
+$avaliacoes = $avaliacao->exibirAvaliacoes();
 ?>
 <!DOCTYPE html>
 <head lang="pt-br">
@@ -34,9 +37,10 @@ $aulas = $aula->exibirAulas();
         </div>
         <br><center><div class="botao-block"><a href="adicionar_curso.php">Adicionar Curso</a></div></center><br>
         </div>
+        
         <br><br>
         <br><div class="box">
-            <br><center><h1>Aulas: </h1></center>
+            <br><center><h1>Aulas:</h1></center>
         <div><br><br>
             <?php foreach ($aulas as $aul) { ?>
             <div id="curso-admin">
@@ -54,6 +58,26 @@ $aulas = $aula->exibirAulas();
         </div>
         <br><center><div class="botao-block"><a href="adicionar_aula.php">Adicionar Aula</a></div></center><br>
         </div>
-
+        
+        <br><br>
+        <br><div class="box">
+            <br><center><h1>Avaliações:</h1></center>
+        <div><br><br>
+            <?php foreach ($avaliacoes as $aval) { ?>
+            <div id="curso-admin">
+                <div class="cont">       
+                    <br><p>Titulo_Avaliação: <?php echo $aval['titulo_avaliacao']; ?></p>
+                    <p>Descricão_Avaliação: <?php echo $aval['descricao_avaliacao']; ?></p><br>
+                    <p>Curso: <?php echo $aval['titulo']; ?></p><br>
+                    <nav>
+                        <a class="botao" href="editar_avaliacao.php?id_avaliacao=<?php echo $aval['id_avaliacao']; ?>">Editar</a>
+                        <a class="botao" href="excluir_avaliacao.php?id_avaliacao=<?php echo $aval['id_avaliacao']; ?>">Excluir</a>
+                    </nav><br>
+                </div> 
+            </div>
+            <?php } ?>
+        </div>
+        <br><center><div class="botao-block"><a href="adicionar_avaliacao.php">Adicionar Avaliação</a></div></center><br>
+        </div>
     </body>
 </head>

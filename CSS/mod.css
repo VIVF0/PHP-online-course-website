@@ -23,12 +23,15 @@ a{
     color: blue;
 }
 textarea{
-    height: 145px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
     font-size: 20px;
+    resize: vertical;
+    background-color: white;
+    height: 30px;
+    width: 70%;
+    font-size: 18px;
     resize: vertical;
     background-color: white;
 }
@@ -49,7 +52,7 @@ input{
 body{
 	font-family: "Helvetica Neue", "Helvetica", "Helvetica", "Arial", "sans-serif";
 	box-sizing: border-box;
-    height: 800px;
+    height: auto;
     width: 100%;
     background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);
 }
