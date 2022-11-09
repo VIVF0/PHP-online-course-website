@@ -22,6 +22,9 @@ class addAulas
     }
     public function remover(string $id): void
     {   
+        include "AddAvaliacao.php";
+        $avaliacao = new addAvaliacao($mysql);
+        $avaliacao->removerAvaliacoesAula($id);
         $removerAula = $this->mysql->prepare('DELETE FROM aulas WHERE id_aula = ?');
         $removerAula->bind_param('s', $id);
         $removerAula->execute();

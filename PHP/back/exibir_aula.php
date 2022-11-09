@@ -28,7 +28,7 @@ class Aulas
     }
     public function encontrarPorTitulo(string $titulo): array
     {
-        $selecionaAula = $this->mysql->prepare("SELECT id_aula,id_curso, titulo_aula, descricao_aula, link_video FROM aulas where titulo=?");
+        $selecionaAula = $this->mysql->prepare("SELECT id_aula,id_curso, titulo_aula, descricao_aula, link_video FROM aulas where titulo_aula=?");
         $selecionaAula->bind_param('s', $titulo);  
         $selecionaAula->execute();
         $aula = $selecionaAula->get_result()->fetch_assoc();

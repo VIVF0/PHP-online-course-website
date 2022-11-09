@@ -7,16 +7,21 @@ class addAvaliacao
     {
         $this->mysql = $mysql;
     }
-    public function adicionar(string $titulo, string $descricao,string $quant_aula, string $titulo_curso): void
+    public function adicionar(string $titulo, string $descricao,string $titulo_aula, string $titulo_curso): void
     {
         $valida = $this->mysql->prepare('SELECT id_curso from cursos where titulo=?');
         $valida->bind_param('s',$titulo_curso);
         $valida->execute();
         $curso= $valida->get_result()->fetch_assoc();
         $id_curso=$curso['id_curso'];
-        if($id_curso!=null){
-            $insereavaliacao = $this->mysql->prepare('INSERT INTO avaliacoes (id_curso,titulo_avaliacao, descricao_avaliacao, dps_n_aula) VALUES(?,?,?,?);');
-            $insereavaliacao->bind_param('ssss',$id_curso, $titulo, $descricao,$quant_aula);
+        $validaAula = $this->mysql->prepare('SELECT id_aula from aulas where titulo_aula=?');
+        $validaAula->bind_param('s',$titulo_aula);
+        $validaAula->execute();
+        $aula= $validaAula->get_result()->fetch_assoc();
+        $id_aula=$aula['id_aula'];
+        if($id_curso!=null and $id_aula!=null){
+            $insereavaliacao = $this->mysql->prepare('INSERT INTO avaliacoes (id_curso,titulo_avaliacao, descricao_avaliacao, id_aula) VALUES(?,?,?,?);');
+            $insereavaliacao->bind_param('ssss',$id_curso, $titulo, $descricao,$id_aula);
             $insereavaliacao->execute();
         }
     }
@@ -59,13 +64,25 @@ class addAvaliacao
             }
         } 
     }
+    public function removerAvaliacoesAula(string $id): void
+    {
+        $result = mysqli_query($this->mysql,"SELECT * FROM avaliacoes WHERE id_aula = $id"); 
+        $cont=mysqli_num_rows($result);
+        if($cont!=0){
+            for($i=0;$i<$cont;$i++){     
+                $identi=mysqli_fetch_assoc($result);
+                $avaliacao = new addAvaliacao($this->mysql);
+                $avaliacao->remover($identi['id_avaliacao']);
+            }
+        } 
+    }
     public function editar(string $id, string $titulo, string $descricao): void
     {
         $editaCurso = $this->mysql->prepare('UPDATE cursos SET titulo = ?, descricao = ? WHERE id_curso = ?');
         $editaCurso->bind_param('sss', $titulo, $descricao, $id);
         $editaCurso->execute();
     }
-    public function addquestao(string $enunciado,string $titulo_avaliacao,string $resposta){
+    public function addquestao(string $enunciado,string $titulo_avaliacao,string $resposta): void{
         $valida = $this->mysql->prepare('SELECT id_avaliacao from avaliacoes where titulo_avaliacao=?');
         $valida->bind_param('s',$titulo_avaliacao);
         $valida->execute();
@@ -77,7 +94,7 @@ class addAvaliacao
             $inserequestao->execute();
         }
     }
-    public function addopcao(string $opcao,string $justificativa,string $enunciado,string $n){
+    public function addopcao(string $opcao,string $justificativa,string $enunciado,string $n): void{
         $valida = $this->mysql->prepare('SELECT id_questao from questoes where enunciado=?');
         $valida->bind_param('s',$enunciado);
         $valida->execute();
