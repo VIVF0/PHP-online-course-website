@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $questao=$avaliacao->addquestao($_POST["questao$x"],$_POST['titulo_avaliacao'],$_POST["radio$x"]);
         //addquestao(string $enunciado,string $titulo_avaliacao,string $resposta)
         for($i=1;$i<=$contOP;$i++){
-            $opcao=$avaliacao->addopcao($_POST["opcao$i"],$_POST["justificativa$i"],$_POST["questao$x"],"opcao$i");
+            $opcao=$avaliacao->addopcao($_POST["opcao$x$i"],$_POST["justificativa$x$i"],$_POST["questao$x"],"opcao$i");
             //addopcao(string $opcao,string $justificativa,string $enunciado)
         }
     }
@@ -57,10 +57,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <p>
                         <?php for($i=1;$i<=$contOP;$i++){?>
                             <label for="">Digite a opção <?php echo $i;?>:</label><input type="radio" id="radio<?php echo $x;?>" name="radio<?php echo $x;?>" value="opcao<?php echo $i;?>"><br>
-                            <textarea class="campo-quest" type="text" name="opcao<?php echo $i;?>" id="opcao<?php echo $i;?>"></textarea>
+                            <textarea class="campo-quest" type="text" name="opcao<?php echo $x;?><?php echo $i;?>" id="opcao<?php echo $x;?><?php echo $i;?>"></textarea>
                             </p><br> 
                             <label for="">Digite a justificativa da opção <?php echo $i;?>:</label><br>
-                            <textarea class="campo-quest" type="text" name="justificativa<?php echo $i;?>" id="justificativa<?php echo $i;?>"></textarea>
+                            <textarea class="campo-quest" type="text" name="justificativa<?php echo $x;?><?php echo $i;?>" id="justificativa<?php echo $x;?><?php echo $i;?>"></textarea>
                             </p><br><br>
                         <?php }?>
                     <?php endfor; ?>

@@ -25,12 +25,13 @@ $questoes=$obj_avaliacao->exibirQuestao($_GET['id_avaliacao']);
                 <br>
                 <p><h3>Descrição:</h3><?php echo nl2br($avaliacao['descricao_avaliacao']);?></p>
             </div>
-            <form id="formProva" nome="formProva" action="" method="POST">
-                <div class="avaliacao"><?php $x=0;?>
+            <form id="formProva" nome="formProva" action="resultado.php?id_avaliacao=<?php echo $avaliacao['id_avaliacao']; ?>" method="POST">
+                <div class="avaliacao"><?php $x=1;?>
             <?php foreach($questoes as $questao):?>
                 <h3><?php echo $questao['enunciado'];?>:</h3>
                 <?php $opcao=$obj_avaliacao->exibirOp($questao['id_questao'])?>
-                <?php $i=0;?>
+                <?php $i=1;?>
+                <input type="hidden" id="id_questao<?php echo $x;?>" name="id_questao<?php echo $x;?>" value="<?php echo $questao['id_questao'];?>">
                 <?php foreach($opcao as $opcoes):?>
                     <br><p><input type="radio" id="radio<?php echo $x;?>" name="radio<?php echo $x;?>" value="opcao<?php echo $i;?>">  <?php echo $opcoes['opcao'];?></p>
                     <?php $i+=1;?>

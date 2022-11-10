@@ -49,8 +49,11 @@ textarea{
 body{
 	font-family: "Helvetica Neue", "Helvetica", "Helvetica", "Arial", "sans-serif";
 	box-sizing: border-box;
-    height: 100vh;
     width: 100%;
+    min-height: 100vh; 
+}
+html{
+    /*height: auto;*/
     background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);
 }
 a:link{

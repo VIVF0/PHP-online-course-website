@@ -40,20 +40,20 @@ $x=0;$y=0;$i=0;
                 <?php foreach($aulas as $aula):?>
                     <h2>
                         <a href="aula.php?id_aula=<?php echo $aula['id_aula']; ?>">
-                        Aula: <img class="img_play" src="../IMG/botao-play.png"><?php echo $aula['titulo_aula']; ?>
+                        <img class="img_play" src="../IMG/botao-play.png"><?php echo $aula['titulo_aula']; ?>
                         </a>
                     </h2>
                     <br>
-                    <p>Descrição: <?php echo nl2br($aula['descricao_aula']);?></p><br><br>
+                    <p><?php echo nl2br($aula['descricao_aula']);?></p><br><br>
                     <?php foreach($avaliacoes as $avaliacao):?>
                         <?php if($avaliacao['id_aula']==$aula['id_aula']):?>
                             <h2>
                             <a href="avaliacao.php?id_avaliacao=<?php echo $avaliacao['id_avaliacao']; ?>">
-                            Avaliação: <img class="img_play" src="../IMG/teste.png"><?php echo $avaliacao['titulo_avaliacao']; ?>
+                            <img class="img_play" src="../IMG/teste.png"><?php echo $avaliacao['titulo_avaliacao']; ?>
                             </a>
                             </h2>
                             <br>
-                            Descrição: <p><?php echo nl2br($avaliacao['descricao_avaliacao']);?></p><br><br>
+                            <p><?php echo nl2br($avaliacao['descricao_avaliacao']);?></p><br><br>
                         <?php endif;?>
                     <?php endforeach;?>
                 <?php endforeach; ?>

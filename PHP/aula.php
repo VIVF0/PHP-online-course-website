@@ -26,7 +26,7 @@ $aulas = $obj_aula->encontrarPorId($_GET['id_aula']);
                 <p><h3>Descrição:</h3><?php echo nl2br($aulas['descricao_aula']);?></p>
             </div>
             <br><br></div></center>
-            <center><div class="video"><iframe src="<?php echo $aulas['link_video']; ?>" style="position:relative;left:0;width:100%;height:350px;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script></center>
+            <center><div class="video"><iframe src="<?php echo $aulas['link_video']; ?>" style="position:relative;left:0;width:100%;height:500px;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script></center>
             <br><br>
     </body>
 </html>

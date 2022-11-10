@@ -5,8 +5,11 @@
 body{
 	font-family: "Helvetica Neue", "Helvetica", "Helvetica", "Arial", "sans-serif";
 	box-sizing: border-box;
-    height: 100vh;
     width: 100%;
+    min-height: 100vh; 
+}
+html{
+    /*height: auto;*/
     background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);
 }
 .carrosel{
@@ -108,7 +111,7 @@ body{
     margin-top: 50px;
     margin-left: 00px;    
 }
-.planos{
+/*.planos{
     margin-top: 550px;
     color: white;
 }
@@ -193,7 +196,7 @@ li{
     border-radius: 25px;
     border:none;
     font-size: 20px;
-}
+}*/
 button:active{
     border:none!important;
     background: linear-gradient(180deg, rgba(60, 4, 131, 0.25) 0%, rgba(175, 81, 142, 0.25) 66.15%, rgba(34, 3, 84, 0.25) 100%);
@@ -220,4 +223,44 @@ a:hover{
 a:visited{
     color: rgba(241, 220, 220, 0.842);
     text-decoration: none;
+}
+.container{
+    width: 60%;
+    background: #f5fffa;
+    margin-top: 200px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    height: auto;
+}
+.box_curso{
+    background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);
+    width: 80%;
+    text-align: justify;
+    height: 100px;
+    margin-bottom: 20px;
+    color: white;
+    border-radius: 20px;
+}
+#buscar_curso{
+    margin-bottom: 40px;
+}
+input{
+    width: 50%;
+    height: 30px;
+    margin-top: 25px;
+    font-size: 20px;
+}
+.img_lupa{
+    width:20px;
+    height:20px;
+}
+.cont{
+    width: 80%;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    height: 80%;
 }

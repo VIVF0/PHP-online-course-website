@@ -1,10 +1,20 @@
+<?php
+require 'PHP/back/config.php';
+include 'PHP/back/exibir_curso.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $curso = new Cursos($mysql);
+    $cursos =$curso->encontrarPorTitulo($_POST['busca_curso']);  
+}else{
+    $curso = new Cursos($mysql);
+    $cursos =$curso->exibirTodos();     
+} 
+?>
 <!DOCTYPE html>
 <head lang="pt-br">
     <head>
         <title>Página_Inicial</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="CSS/home.css">
-        <link rel="stylesheet" type="text/css" href="CSS/pag_padrao.css">
     </head>
     <body>
         <nav>
@@ -41,7 +51,7 @@
             </div>
         </div>
         <!--Parte dos planos-->
-        <div class="planos">
+        <!--<div class="planos">
             <div class="barra">
                 |
             </div>
@@ -94,6 +104,30 @@
                 </div>
             </div>
         </div>
-        <br><br><br><br><br>
+        <br><br><br><br><br>-->
+        <center><div class="container">
+            <form action="index.php" id="buscar_curso" method="POST" name="Pesquisa">    
+                <input type="text" id="busca_curso" name="busca_curso" value="" placeholder="Busca de Curso">
+                <button><img class="img_lupa" src="IMG/lupa-arredondada.png" ></button>
+            </form>
+            <?php foreach ($cursos as $curso) : ?>
+                <div class="box_curso">
+                    <div class="cont">
+                        <br><h2>
+                            <a href="curso.php?id_curso=<?php echo $curso['id_curso']; ?>">
+                                <?php echo $curso['titulo']; ?>
+                            </a>
+                        </h2>
+                        <p>
+                            <?php echo nl2br($curso['descricao']); ?>
+                        </p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+            <br>
+        </div></center>
+        <script>
+            buscar_curso.reset();
+        </script>
     </body>
 </head>
