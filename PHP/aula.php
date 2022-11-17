@@ -3,6 +3,8 @@ require 'back/config.php';
 require 'back/exibir_aula.php';
 $obj_aula = new Aulas($mysql);
 $aulas = $obj_aula->encontrarPorId($_GET['id_aula']);
+/*include "back/cookie.php";
+cookie($_COOKIE['login']);*/
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,8 +12,18 @@ $aulas = $obj_aula->encontrarPorId($_GET['id_aula']);
         <title><?php echo $aulas['titulo_aula'];?></title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="../CSS/aula.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/dark.css">
+        <script src="../JS/modonot.js" defer></script>
     </head>
     <body>
+        <div class="dark">
+            <label class="switch">
+                <div class="switch-wrapper">
+                    <input type="checkbox" name="toggle-dark" id="toggle-dark">
+                    <span class="switch-button"></span>
+                </div>
+            </label>
+        </div>
         <nav>
             <!--Menu-->
             <object width="100%" height="100px" data="../HTML/menu.html"></object>

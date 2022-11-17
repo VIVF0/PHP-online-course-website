@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<head lang="pt-br"">
+<head lang="pt-br">
     <head>
         <title>Doação</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="../CSS/doa.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/dark.css">
+        <script src="../JS/modonot.js" defer></script>
     </head>
     <body>
+        <div class="dark">
+            <label class="switch">
+                <div class="switch-wrapper">
+                    <input type="checkbox" name="toggle-dark" id="toggle-dark">
+                    <span class="switch-button"></span>
+                </div>
+            </label>
+        </div>
         <nav>
             <object width="100%" height="100px" data="menu.html"></object>
        </nav>  
@@ -17,5 +27,12 @@
         Para qualquer problema ou mais informações entrar em contato!
        </div>
        <br><br>
+       <div class="chatbot"><script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+        <df-messenger
+          intent="WELCOME"
+          chat-title="Job For All"
+          agent-id="9c92cde5-8005-4a96-9a25-fdf3a60dff56"
+          language-code="pt-br"
+        ></df-messenger></div>
     </body>
 </head>

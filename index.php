@@ -8,6 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $curso = new Cursos($mysql);
     $cursos =$curso->exibirTodos();     
 } 
+/*include "PHP/back/cookie.php";
+cookie($_COOKIE['login']);*/
 ?>
 <!DOCTYPE html>
 <head lang="pt-br">
@@ -15,8 +17,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <title>Página_Inicial</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="CSS/home.css">
+        <link rel="stylesheet" type="text/css" href="CSS/dark.css">
+        <script src="JS/modonot.js" defer></script>
     </head>
     <body>
+        <div class="dark">
+            <label class="switch">
+                <div class="switch-wrapper">
+                    <input type="checkbox" name="toggle-dark" id="toggle-dark">
+                    <span class="switch-button"></span>
+                </div>
+            </label>
+        </div>
         <nav>
             <!--Menu-->
             <object width="100%" height="100px" data="HTML/menu.html"></object>
@@ -50,63 +62,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <img class="poli" src="IMG/empresas/image 8empresas.png">
             </div>
         </div>
-        <!--Parte dos planos-->
-        <!--<div class="planos">
+        <div class="planos">
             <div class="barra">
                 |
             </div>
-            <p class="titulo_empresa">Planos</p>
+            <p class="titulo_empresa">Cursos:</p><a name="curso"></a>
         </div>
-        <div class="box1">
-            <div class="plano1">
-                <div class="cont">
-                    Plano1
-                    <ul class="beneficios">
-                        <li>
-                            Acesso a todos os cursos
-                        </li>
-                    </ul> 
-                    <button class="btn_sobre">
-                        <a href="" target="_parent">Saiba Mais</a>
-                    </button>
-                </div>
-            </div>
-            <div class="plano2">
-                <div class="cont">
-                    Plano2
-                    <ul class="beneficios">
-                        <li>
-                            Acesso a todos os cursos<br>
-                        </li>
-                        <li>
-                            Ajuda a encontro com empresas
-                        </li>
-                    </ul>
-                    <button class="btn_sobre2">
-                        <a href="" target="_parent">Saiba Mais</a>
-                    </button>
-                </div>
-            </div>
-            <div class="plano3">
-                <div class="cont">
-                    Plano3
-                    <ul class="beneficios">
-                        <li>
-                            Acesso a todos os cursos
-                        </li>
-                        <li>
-                            Ajuda a encontro com empresas
-                        </li>
-                    </ul>
-                    <button class="btn_sobre3">
-                        <a href="" target="_parent">Saiba Mais</a>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <br><br><br><br><br>-->
         <center><div class="container">
-            <form action="index.php" id="buscar_curso" method="POST" name="Pesquisa">    
+            <form action="index.php#curso" id="buscar_curso" method="POST" name="Pesquisa">    
                 <input type="text" id="busca_curso" name="busca_curso" value="" placeholder="Busca de Curso">
                 <button><img class="img_lupa" src="IMG/lupa-arredondada.png" ></button>
             </form>
@@ -114,13 +77,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="box_curso">
                     <div class="cont">
                         <br><h2>
-                            <a href="curso.php?id_curso=<?php echo $curso['id_curso']; ?>">
+                            <a href="PHP/curso.php?id_curso=<?php echo $curso['id_curso']; ?>">
                                 <?php echo $curso['titulo']; ?>
-                            </a>
+                            </a>                            
                         </h2>
                         <p>
-                            <?php echo nl2br($curso['descricao']); ?>
-                        </p>
+                        <br><h3>Custo: R$<?php echo $curso['custo']; ?></h3>
+                        <br><h3>Carga Horária: <?php echo $curso['carga_horario']; ?></h3>
+                        <br><?php echo nl2br($curso['descricao']); ?>
+                        <br><br></p>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -129,5 +94,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <script>
             buscar_curso.reset();
         </script>
+        <div class="chatbot"><script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="Job For All"
+  agent-id="9c92cde5-8005-4a96-9a25-fdf3a60dff56"
+  language-code="pt-br"
+></df-messenger></div>
     </body>
 </head>

@@ -6,7 +6,7 @@ require '../back/redireciona.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $curso = new addCursos($mysql);
-    $curso->adicionar($_POST['titulo'], $_POST['descricao']);
+    $curso->adicionar($_POST['titulo'], $_POST['descricao'],$_POST['custo'],$_POST['carga']);
     redireciona('index.php');
 }
 
@@ -30,6 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <p>
                         <label for="">Digite a descricao do curso</label><br><br>
                         <textarea class="campo-form" type="text" name="descricao" id="descricao"></textarea>
+                    </p><br>
+                    <p>
+                        <label for="">Digite o custo</label><br><br>
+                        <input class="campo-form" type="text" name="custo" id="custo"/>
+                    </p><br>
+                    <p>
+                        <label for="">Digite a carga horario</label><br><br>
+                        <input class="campo-form" type="text" name="carga" id="carga"/>
                     </p><br>
                     <p>
                         <button class="botao">Criar Curso</button>

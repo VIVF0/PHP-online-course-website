@@ -8,6 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $curso = new Cursos($mysql);
     $cursos =$curso->exibirTodos();     
 } 
+/*include "back/cookie.php";
+cookie($_COOKIE['login']);*/
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,8 +17,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <title>Cursos</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="../CSS/cursos.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/dark.css">
+        <script src="../JS/modonot.js" defer></script>
     </head>
     <body>
+        <div class="dark">
+            <label class="switch">
+                <div class="switch-wrapper">
+                    <input type="checkbox" name="toggle-dark" id="toggle-dark">
+                    <span class="switch-button"></span>
+                </div>
+            </label>
+        </div>
         <nav>
             <!--Menu-->
             <object width="100%" height="100px" data="../HTML/menu.html"></object>

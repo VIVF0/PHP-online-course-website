@@ -9,8 +9,13 @@ body{
     min-height: 100vh; 
 }
 html{
-    /*height: auto;*/
-    background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);
+    --background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);
+}
+html[data-theme="dark"] {
+    --background: linear-gradient(180deg, rgba(10, 10, 10, 0.82) 0%, rgba(26, 24, 24, 0.98) 100%);
+}
+html{
+    background: var(--background);
 }
 .carrosel{
     margin-top: 10px;
@@ -111,92 +116,10 @@ html{
     margin-top: 50px;
     margin-left: 00px;    
 }
-/*.planos{
+.planos{
     margin-top: 550px;
     color: white;
 }
-.box1{
-    align-content: center;
-    justify-content: center;
-    display: flex;
-    margin-top: 75px;
-    align-items: stretch;
-}
-.plano1{
-    width: 300px;
-    height: 400px;
-    background: linear-gradient(180deg, rgba(3, 163, 255, 0.822) 0%, rgba(5, 39, 248, 0.98) 100%);
-    border-radius: 25px;
-    margin-right: 80px;
-    margin-top: 50px;
-}
-.plano2{
-    width: 300px;
-    height: 400px;
-    background: linear-gradient(180deg, rgba(3, 163, 255, 0.822) 0%, rgba(5, 39, 248, 0.98) 100%);
-    border-radius: 25px;
-}
-.plano3{
-    width: 300px;
-    height: 400px;
-    background: linear-gradient(180deg, rgba(3, 163, 255, 0.822) 0%, rgba(5, 39, 248, 0.98) 100%);
-    border-radius: 25px;
-    margin-left: 80px;
-    margin-top: 50px;
-}
-.cont{
-    text-align: center;
-    width: 250;
-    height: 350px;
-    color: black;
-    margin-top: 25px;
-    font-size: 35px;
-}
-.beneficios{
-    font-size: 20px;
-    color: white;
-    margin-top: 30px;
-    list-style: none;
-    text-align: justify;
-}
-li{
-    margin-top: 15px;
-    width: 250px;
-    margin-left: 30px;
-}
-.btn_sobre{
-    border:none!important;
-    width: 200px;
-    height: 80px;
-    align-items: center;
-    margin-top: 160px;
-    background: linear-gradient(180deg, rgba(10, 10, 10, 0.733) 0%, rgba(25, 14, 75, 0.25) 66.15%, rgba(150, 150, 151, 0.959) 100%);
-    border-radius: 25px;
-    border:none;
-    font-size: 20px;
-}
-.btn_sobre2{
-    border:none!important;
-    width: 200px;
-    height: 80px;
-    align-items: center;
-    margin-top: 100px;
-    background: linear-gradient(180deg, rgba(10, 10, 10, 0.733) 0%, rgba(25, 14, 75, 0.25) 66.15%, rgba(150, 150, 151, 0.959) 100%);
-    border-radius: 25px;
-    border:none;
-    font-size: 20px;
-}
-.btn_sobre3{
-    border:none!important;
-    width: 200px;
-    height: 80px;
-    align-items: center;
-    margin-top: 100px;
-    background: linear-gradient(180deg, rgba(10, 10, 10, 0.733) 0%, rgba(25, 14, 75, 0.25) 66.15%, rgba(150, 150, 151, 0.959) 100%);
-    border-radius: 25px;
-    border:none;
-    font-size: 20px;
-}*/
 button:active{
     border:none!important;
     background: linear-gradient(180deg, rgba(60, 4, 131, 0.25) 0%, rgba(175, 81, 142, 0.25) 66.15%, rgba(34, 3, 84, 0.25) 100%);
@@ -227,16 +150,16 @@ a:visited{
 .container{
     width: 60%;
     background: #f5fffa;
-    margin-top: 200px;
+    margin-top: 80px;
     border-radius: 5px;
     margin-bottom: 20px;
     height: auto;
 }
 .box_curso{
-    background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);
+    background: var(--background);
     width: 80%;
     text-align: justify;
-    height: 100px;
+    height: auto;
     margin-bottom: 20px;
     color: white;
     border-radius: 20px;
@@ -262,5 +185,5 @@ input{
     margin-right: auto;
     overflow: hidden;
     text-overflow: ellipsis; 
-    height: 80%;
+    height: auto;
 }

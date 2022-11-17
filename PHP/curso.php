@@ -12,6 +12,8 @@ $avaliacao = new Avaliacoes($mysql);
 $avaliacoes = $avaliacao->exibirTodosAvaliacoes($curso['id_curso']);
 $cont=count($aulas);
 $x=0;$y=0;$i=0;
+/*include "back/cookie.php";
+cookie($_COOKIE['login']);*/
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,15 +21,25 @@ $x=0;$y=0;$i=0;
         <title><?php echo $curso['titulo']; ?></title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="../CSS/curso.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/dark.css">
+        <script src="../JS/modonot.js" defer></script>
     </head>
     <body>
+        <div class="dark">
+            <label class="switch">
+                <div class="switch-wrapper">
+                    <input type="checkbox" name="toggle-dark" id="toggle-dark">
+                    <span class="switch-button"></span>
+                </div>
+            </label>
+        </div>
         <nav>
             <!--Menu-->
             <object width="100%" height="100px" data="../HTML/menu.html"></object>
             <!--Carrosel-->
        </nav>
         <div class="container">
-            <div class="curso">       
+            <div class="curso">     
                 <h1>
                     Curso: <?php echo $curso['titulo']; ?>
                 </h1>

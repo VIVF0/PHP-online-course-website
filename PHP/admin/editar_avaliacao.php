@@ -12,8 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 $avaliacoes = new Avaliacoes($mysql);
 $avaliacao = $avaliacoes->encontrarPorId($_GET['id_avaliacao']);
-$questao=$avaliacoes->exibirQuestao($_GET['id_avaliacao']);
-$cont=2;
+$questoes=$avaliacoes->exibirQuestao($_GET['id_avaliacao']);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -42,23 +41,27 @@ $cont=2;
                         <textarea class="campo-form" type="text" name="descricao_avaliacao" id="descricao_avaliacao"></textarea>
                         <br>Descricão Atual: <?php echo $avaliacao['descricao_avaliacao']; ?>
                     </p><br><br>
+                    <?php $x=0;?>
                     <input type="hidden" name="id_avaliacao" value="<?php echo $avaliacao['id_avaliacao']; ?>"/>
-                    <?php for($x=0;$x<=$cont;$x++):?>
+                    <?php foreach($questoes as $questao):?>
                         <p>
                         <label for=""><h2>Insira o enunciado da questão <?php echo $x;?>:</h2></label><br>
                         <textarea class="campo-quest" type="text" name="questao<?php echo $x;?>" id="questao<?php echo $x;?>"></textarea>
                         </p>(Marque a bolinha da questão certa!)<br><br>
-                        <?php echo $questao['enunciado'];?>
+                        Atual: <?php echo $questao['enunciado'];?>
                         <p>
-                        <?php for($i=1;$i<=$contOP;$i++){?>
-                            <label for="">Digite a opção <?php echo $i;?>:</label><input type="radio" id="radio<?php echo $x;?>" name="radio<?php echo $x;?>" value="opcao<?php echo $i;?>"><br>
-                            <textarea class="campo-quest" type="text" name="opcao<?php echo $i;?>" id="opcao<?php echo $i;?>"></textarea>
-                            </p><br> 
-                            <label for="">Digite a justificativa da opção <?php echo $i;?>:</label><br>
-                            <textarea class="campo-quest" type="text" name="justificativa<?php echo $i;?>" id="justificativa<?php echo $i;?>"></textarea>
-                            </p><br><br>
-                        <?php }?>
-                    <?php endfor; ?>
+                        <?php $opcao=$avaliacoes->exibirOp($questao['id_questao'])?>
+                        <?php $i=1;?>
+                        <input type="hidden" id="id_questao<?php echo $x;?>" name="id_questao<?php echo $x;?>" value="<?php echo $questao['id_questao'];?>">
+                        <?php foreach($opcao as $opcoes):?>
+                            <br><p><input type="radio" id="radio<?php echo $x;?>" name="radio<?php echo $x;?>" value="opcao<?php echo $i;?>">  
+                            <label for=""><h3>Insira a nova opcao <?php echo $i;?>:</h3></label><br>
+                            <textarea class="campo-quest" type="text" name="opcao<?php echo $x;?>" id="opcao<?php echo $x;?>"></textarea>
+                            Atual: <?php echo $opcoes['opcao'];?></p>
+                            <?php $i+=1;?>
+                        <?php endforeach;?><br>
+                        <?php $x+=1;?>
+                    <?php endforeach;?>
                     <p>
                         <button class="botao">Editar Curso</button>
                     </p>

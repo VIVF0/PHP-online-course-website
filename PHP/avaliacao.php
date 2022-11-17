@@ -4,6 +4,8 @@ require 'back/exibir_avaliacoes.php';
 $obj_avaliacao = new Avaliacoes($mysql);
 $avaliacao = $obj_avaliacao->encontrarPorId($_GET['id_avaliacao']);
 $questoes=$obj_avaliacao->exibirQuestao($_GET['id_avaliacao']);
+/*include "back/cookie.php";
+cookie($_COOKIE['login']);*/
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -11,8 +13,18 @@ $questoes=$obj_avaliacao->exibirQuestao($_GET['id_avaliacao']);
         <title><?php echo $avaliacao['titulo_avaliacao'];?></title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="../CSS/avaliacao.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/dark.css">
+        <script src="../JS/modonot.js" defer></script>
     </head>
     <body>
+        <div class="dark">
+            <label class="switch">
+                <div class="switch-wrapper">
+                    <input type="checkbox" name="toggle-dark" id="toggle-dark">
+                    <span class="switch-button"></span>
+                </div>
+            </label>
+        </div>
         <nav>
             <!--Menu-->
             <object width="100%" height="100px" data="../HTML/menu.html"></object>
@@ -41,7 +53,7 @@ $questoes=$obj_avaliacao->exibirQuestao($_GET['id_avaliacao']);
             <p>
                 <button class="botao">Enviar</button>
             </p></form>
-            </div>
+            </div><br>
             <script>
                 formProva.reset();
             </script>

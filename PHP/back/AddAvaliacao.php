@@ -46,35 +46,9 @@ class addAvaliacao
     }
     public function remover(string $id): void
     {
-        $questao = new addAvaliacao($this->mysql);
-        $questao->removerQuest($id);
         $removerAvaliacao = $this->mysql->prepare('DELETE FROM avaliacoes  WHERE id_avaliacao = ?');
         $removerAvaliacao->bind_param('s', $id);
         $removerAvaliacao->execute();
-    }
-    public function removerAvaliacoes(string $id): void
-    {
-        $result = mysqli_query($this->mysql,"SELECT * FROM avaliacoes WHERE id_curso = $id"); 
-        $cont=mysqli_num_rows($result);
-        if($cont!=0){
-            for($i=0;$i<$cont;$i++){     
-                $identi=mysqli_fetch_assoc($result);
-                $avaliacao = new addAvaliacao($this->mysql);
-                $avaliacao->remover($identi['id_avaliacao']);
-            }
-        } 
-    }
-    public function removerAvaliacoesAula(string $id): void
-    {
-        $result = mysqli_query($this->mysql,"SELECT * FROM avaliacoes WHERE id_aula = $id"); 
-        $cont=mysqli_num_rows($result);
-        if($cont!=0){
-            for($i=0;$i<$cont;$i++){     
-                $identi=mysqli_fetch_assoc($result);
-                $avaliacao = new addAvaliacao($this->mysql);
-                $avaliacao->remover($identi['id_avaliacao']);
-            }
-        } 
     }
     public function editar(string $id, string $titulo, string $descricao): void
     {

@@ -9,8 +9,13 @@ body{
     min-height: 100vh; 
 }
 html{
-    /*height: auto;*/
-    background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);
+    --background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);
+}
+html[data-theme="dark"] {
+    --background: linear-gradient(180deg, rgba(10, 10, 10, 0.82) 0%, rgba(26, 24, 24, 0.98) 100%);;
+}
+html{
+    background: var(--background);
 }
 a:link{
     color: rgb(231, 213, 213);
@@ -35,7 +40,7 @@ a:visited{
     height: auto;
 }
 .box_curso{
-    background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);
+    background: var(--background);
     width: 80%;
     text-align: justify;
     height: 100px;
