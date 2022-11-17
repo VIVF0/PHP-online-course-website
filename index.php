@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 require 'PHP/back/config.php';
 include 'PHP/back/exibir_curso.php';
@@ -104,16 +103,3 @@ cookie($_COOKIE['login']);*/
 ></df-messenger></div>
     </body>
 </head>
-=======
-<?php
-  $login_cookie = $_COOKIE['login'];
-    if(isset($login_cookie)){
-      echo"Bem-Vindo, $login_cookie <br>";
-      echo"Essas informações <font color='red'>PODEM</font> ser acessadas por você";
-    }else{
-      echo"Bem-Vindo, convidado <br>";
-      echo"Essas informações <font color='red'>NÃO PODEM</font> ser acessadas por você";
-      echo"<br><a href='login.html'>Faça Login</a> Para ler o conteúdo";
-    }
-?>
->>>>>>> 18d2fc6d8e6b985f38808bd4a9098c1a4346d63e
