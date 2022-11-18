@@ -3,8 +3,10 @@ require 'back/config.php';
 require 'back/exibir_aula.php';
 $obj_aula = new Aulas($mysql);
 $aulas = $obj_aula->encontrarPorId($_GET['id_aula']);
-/*include "back/cookie.php";
-cookie($_COOKIE['login']);*/
+session_start();
+$login=$_SESSION['login'];
+include "back/cookie.php";
+cookie($login);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,8 +28,7 @@ cookie($_COOKIE['login']);*/
         </div>
         <nav>
             <!--Menu-->
-            <object width="100%" height="100px" data="../HTML/menu.html"></object>
-            <!--Carrosel-->
+            <object width="100%" height="100px" data="menu.php"></object>
        </nav>
         <br><center><div class="container">
             <div class="aulas">

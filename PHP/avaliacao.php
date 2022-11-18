@@ -4,8 +4,10 @@ require 'back/exibir_avaliacoes.php';
 $obj_avaliacao = new Avaliacoes($mysql);
 $avaliacao = $obj_avaliacao->encontrarPorId($_GET['id_avaliacao']);
 $questoes=$obj_avaliacao->exibirQuestao($_GET['id_avaliacao']);
-/*include "back/cookie.php";
-cookie($_COOKIE['login']);*/
+session_start();
+$login=$_SESSION['login'];
+include "back/cookie.php";
+cookie($login);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -27,7 +29,7 @@ cookie($_COOKIE['login']);*/
         </div>
         <nav>
             <!--Menu-->
-            <object width="100%" height="100px" data="../HTML/menu.html"></object>
+            <object width="100%" height="100px" data="menu.php"></object>
        </nav>
         <br><div class="container">
             <div class="aulas">

@@ -11,8 +11,10 @@
     }
     //$notas->insertnota($_GET['id_aula'],$_GET['id_avaliacao'],$nota,$data,$horario);
     $questoes=$obj_avaliacao->exibirQuestao($_GET['id_avaliacao']);
-    /*include "back/cookie.php";
-    cookie($_COOKIE['login']);*/
+    session_start();
+    $login=$_SESSION['login'];
+    include "back/cookie.php";
+    cookie($login);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -34,7 +36,7 @@
         </div>
         <nav>
             <!--Menu-->
-            <object width="100%" height="100px" data="../HTML/menu.html"></object>
+            <object width="100%" height="100px" data="menu.php"></object>
        </nav>
         <br><center><div class="resultado"><h2><p>Resultado "<?php echo $avaliacao['titulo_avaliacao']?>": <?php echo $nota;?></p></h2></center></div>
         <?php $x=1;?>

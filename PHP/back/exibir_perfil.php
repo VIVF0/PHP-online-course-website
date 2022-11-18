@@ -9,10 +9,10 @@ class Perfil
     {
         $this->mysql = $mysql;
     }
-    public function exibirPerfil(string $id): array
+    public function exibirPerfil(string $login): array
     {
-        $selecionaPerfil = $this->mysql->prepare("SELECT * FROM usuarios WHERE id_usuario = ?");
-        $selecionaPerfil->bind_param('s', $id);
+        $selecionaPerfil = $this->mysql->prepare("SELECT * FROM usuarios WHERE login = ?");
+        $selecionaPerfil->bind_param('s', $login);
         $selecionaPerfil->execute();
         $perfil = $selecionaPerfil->get_result()->fetch_assoc();
         return $perfil;

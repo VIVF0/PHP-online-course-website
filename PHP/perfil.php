@@ -1,11 +1,12 @@
 <?php
-
+session_start();
+$login=$_SESSION['login'];
+include "back/cookie.php";
+cookie($login);
 require 'back/config.php';
 require 'back/exibir_perfil.php';
 $perfil = new Perfil($mysql);
-$perfil= $perfil->exibirPerfil($_GET['id_usuario']);
-/*include "back/cookie.php";
-cookie($_COOKIE['login']);*/
+$perfil= $perfil->exibirPerfil($login);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -27,11 +28,12 @@ cookie($_COOKIE['login']);*/
         </div>
         <nav>
             <!--Menu-->
-            <object width="100%" height="100px" data="../HTML/menu.html"></object>
+            <object width="100%" height="100px" data="menu.php"></object>
             <!--Carrosel-->
         </nav>
         <div class="container">
-            
+            <p>Nome: <?php echo $perfil['nome'];?><br><br>
+            Email: <?php echo $perfil['login'];?></p>
         </div>
     </body>
 </html>

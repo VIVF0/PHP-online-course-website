@@ -1,7 +1,11 @@
 <?php
-$login = $_POST['login'];
-$entrar = $_POST['entrar'];
-$senha = md5($_POST['senha']);
+/*if($_POST['entrar']==true){*/
+  $login = $_POST['login'];
+  $entrar = $_POST['entrar'];
+  $senha = md5($_POST['senha']);
+/*}else{
+  $sair=$_POST['sair'];
+}*/
 $connect = mysqli_connect('localhost', 'root', '', 'job_for_all');
   if (isset($entrar)) {
     $verifica = mysqli_query($connect,"SELECT * FROM conta WHERE usuario ='$login' AND senha = '$senha'");
@@ -10,8 +14,12 @@ $connect = mysqli_connect('localhost', 'root', '', 'job_for_all');
         alert('Login e/ou senha incorretos');window.location
         .href='../../HTML/formulario de login.html';</script>";
       }else{
-        setcookie('login',$login, (time() + (6 * 3600)));
+        session_start();
+        $_SESSION['login']=$login;
         header("Location:../../index.php");
     }
-  }
+  }/*elseif(isset($sair)){
+    session_destroy();
+    header("Location:../../index.php");
+  }*/
 ?>

@@ -12,8 +12,10 @@ $avaliacao = new Avaliacoes($mysql);
 $avaliacoes = $avaliacao->exibirTodosAvaliacoes($curso['id_curso']);
 $cont=count($aulas);
 $x=0;$y=0;$i=0;
-/*include "back/cookie.php";
-cookie($_COOKIE['login']);*/
+session_start();
+$login=$_SESSION['login'];
+include "back/cookie.php";
+cookie($login);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -35,7 +37,7 @@ cookie($_COOKIE['login']);*/
         </div>
         <nav>
             <!--Menu-->
-            <object width="100%" height="100px" data="../HTML/menu.html"></object>
+            <object width="100%" height="100px" data="menu.php"></object>
             <!--Carrosel-->
        </nav>
         <div class="container">

@@ -8,8 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $curso = new Cursos($mysql);
     $cursos =$curso->exibirTodos();     
 } 
-/*include "PHP/back/cookie.php";
-cookie($_COOKIE['login']);*/
+/*session_start();
+$login=$_SESSION['login'];*/
 ?>
 <!DOCTYPE html>
 <head lang="pt-br">
@@ -31,7 +31,7 @@ cookie($_COOKIE['login']);*/
         </div>
         <nav>
             <!--Menu-->
-            <object width="100%" height="100px" data="HTML/menu.html"></object>
+            <object width="100%" height="100px" data="PHP/menu.php"></object>
             <!--Carrosel-->
             <center><object class="carrosel" width="1000" height="400" data="HTML/carousel.html"></object></center>
        </nav>    
