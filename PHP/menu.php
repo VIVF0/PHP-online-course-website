@@ -1,11 +1,16 @@
 <?php 
-    $valida=true;
     session_start();
-    $login=$_SESSION['login'];
-    require 'back/config.php';
-    require 'back/exibir_perfil.php';
-    $perfils = new Perfil($mysql);
-    $perfil= $perfils->exibirPerfil($login);
+    if(isset($_SESSION['login'])){
+        $login=$_SESSION['login'];
+        require 'back/config.php';
+        require 'back/exibir_perfil.php';
+        $perfils = new Perfil($mysql);
+        $perfil= $perfils->exibirPerfil($login);  
+        $valida=true;
+    }else{
+        $valida=false;
+    }
+    
 ?>
 <!DOCTYPE HTML>
 <html lang="pt-br">
@@ -35,8 +40,8 @@
             <h1  class="logo"><a class="menu_link" href="../index.php" target="_parent">Job For All</a></h1>
             <div class="conteiner">
             <ul class="menu">
-                <?php if(isset($_SESSION['login'])):?>
-                    <li><a href="perfil.php?id_usuario=<?php echo $perfil['id_usuario']; ?>" target="_parent"><img src="../IMG/menu/botao-redondo-da-conta-com-o-usuario-dentro.png">Perfil</a>
+                <?php if($valida==true):?>
+                    <li><a href="perfil.php?id_cliente=<?php echo $perfil['id_cliente']; ?>" target="_parent"><img src="../IMG/menu/botao-redondo-da-conta-com-o-usuario-dentro.png">Perfil</a>
                         <ul>
                             <li><a href="back/logout.php" target="_parent"><img src="../IMG/menu/botao-redondo-da-conta-com-o-usuario-dentro.png">Logout</a></li>
                         </ul>

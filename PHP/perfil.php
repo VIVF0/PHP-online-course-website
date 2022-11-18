@@ -5,13 +5,17 @@ include "back/cookie.php";
 cookie($login);
 require 'back/config.php';
 require 'back/exibir_perfil.php';
-$perfil = new Perfil($mysql);
-$perfil= $perfil->exibirPerfil($login);
+require 'back/exibir_avaliacoes.php';
+$avaliacao = new Avaliacoes($mysql);
+$avaliacoes = $avaliacao->exibirTodosAvaliacoes($curso['id_curso']);
+$perfils = new Perfil($mysql);
+$perfil= $perfils->exibirPerfil($login);
+$historico=$perfils->exibirHistorico($perfil['id_cliente']);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title><?php echo $perfil['nome']; ?></title>
+        <title>Perfil: <?php echo $perfil['nome']; ?></title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="../CSS/curso.css">
         <link rel="stylesheet" type="text/css" href="../CSS/dark.css">
@@ -29,11 +33,10 @@ $perfil= $perfil->exibirPerfil($login);
         <nav>
             <!--Menu-->
             <object width="100%" height="100px" data="menu.php"></object>
-            <!--Carrosel-->
         </nav>
         <div class="container">
             <p>Nome: <?php echo $perfil['nome'];?><br><br>
-            Email: <?php echo $perfil['login'];?></p>
+            Email: <?php echo $perfil['usuario'];?></p>
         </div>
     </body>
 </html>

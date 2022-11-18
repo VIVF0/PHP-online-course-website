@@ -1,7 +1,14 @@
 <?php 
+    session_start();
+    $login=$_SESSION['login'];
+    include "back/cookie.php";
+    cookie($login);
     require "back/config.php";
     require "back/validacao.php";
     require 'back/exibir_avaliacoes.php';
+    require 'back/exibir_perfil.php';
+    $perfils = new Perfil($mysql);
+    $perfil= $perfils->exibirPerfil($login);
     $notas = new valida($mysql);
     $obj_avaliacao = new Avaliacoes($mysql);
     $avaliacao = $obj_avaliacao->encontrarPorId($_GET['id_avaliacao']);
@@ -9,12 +16,10 @@
     for($i=1;$i<3;$i++){
         $nota+=$notas->valida($_POST["id_questao".$i],$_POST["radio".$i]);
     }
-    //$notas->insertnota($_GET['id_aula'],$_GET['id_avaliacao'],$nota,$data,$horario);
+    date_default_timezone_set('America/Sao_Paulo');
+    $date = date('Y-m-d H:i');
+    $notas->insertnota($perfil['id_cliente'],$_GET['id_avaliacao'],$nota,$date);
     $questoes=$obj_avaliacao->exibirQuestao($_GET['id_avaliacao']);
-    session_start();
-    $login=$_SESSION['login'];
-    include "back/cookie.php";
-    cookie($login);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

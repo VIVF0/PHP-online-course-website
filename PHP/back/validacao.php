@@ -17,10 +17,9 @@
             return 0;
         }
     }
-    public function insertnota(string $id_aluno,string $id_avaliacao,string $nota,string $data,string $horario):void{
-        $valida = $this->mysql->prepare('INSERT INTO historico (id_avaliacao,id_aluno,nota,dia,horario) values(?,?,?,?,?)');
-        $valida->bind_param('ssss',$id_avaliacao,$id_aluno,$nota,$data,$horario);
+    public function insertnota(string $id_cliente,string $id_avaliacao,string $nota,string $agora):void{
+        $valida = $this->mysql->prepare('INSERT INTO historico (id_avaliacao,id_cliente,nota,hora_data) values(?,?,?,?)');
+        $valida->bind_param('ssss',$id_avaliacao,$id_cliente,$nota,$agora);
         $valida->execute();
-        //talvez colocar data e hora na mesma coluna
     }
 }

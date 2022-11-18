@@ -15,7 +15,6 @@ $logarray = $array['usuario'];
     echo"<script language='javascript' type='text/javascript'>
     alert('O campo login deve ser preenchido');window.location.href='
     cadastro.html';</script>";
-
     }else{
       if($logarray == $login){
 
@@ -23,15 +22,13 @@ $logarray = $array['usuario'];
         alert('Esse login já existe');window.location.href='
         ../../HTML/formulario de cadastro.html';</script>";
         die();
-
       }else{
         $query = "INSERT INTO conta (usuario,senha,sexo,nome) VALUES ('$login','$senha','$sexo','$nome')";
         $insert = mysqli_query($connect,$query);
-
         if($insert){
-          echo"<script language='javascript' type='text/javascript'>
-          alert('Usuário cadastrado com sucesso!');window.location.</script>";
-          header("Location: ../../HTML/formulario de login.html");
+          session_start();
+          $_SESSION['login']=$login;
+          header("Location:../../index.php");
         }else{
           echo"<script language='javascript' type='text/javascript'>
           alert('Não foi possível cadastrar esse usuário');window.location
@@ -39,4 +36,3 @@ $logarray = $array['usuario'];
         }
       }
     }
-?>
