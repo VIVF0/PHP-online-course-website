@@ -22,4 +22,9 @@
         $valida->bind_param('ssss',$id_avaliacao,$id_cliente,$nota,$agora);
         $valida->execute();
     }
+    public function insertOp(string $id_avaliacao,string $id_questao,string $opcao,string $id_cliente):void{
+        $valida = $this->mysql->prepare('INSERT INTO respostas (id_avaliacao,id_cliente,id_questao,opcao) values(?,?,?,?)');
+        $valida->bind_param('ssss',$id_avaliacao,$id_cliente,$id_questao,$opcao);
+        $valida->execute();
+    }
 }

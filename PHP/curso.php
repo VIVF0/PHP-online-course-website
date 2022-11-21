@@ -1,21 +1,23 @@
 <?php
-
+session_start();
+$login=$_SESSION['login'];
+include "back/cookie.php";
+cookie($login);
+require 'back/exibir_perfil.php';
 require 'back/config.php';
 include 'back/exibir_curso.php';
 require 'back/exibir_aula.php';
 require 'back/exibir_avaliacoes.php';
 $obj_curso = new Cursos($mysql);
-$curso = $obj_curso->encontrarPorId($_GET['id_curso']);
-$aula = new Aulas($mysql);
-$aulas =$aula->exibirTodosAulas($curso['id_curso']);
+$obj_perfil = new Perfil($mysql);
 $avaliacao = new Avaliacoes($mysql);
+$aula = new Aulas($mysql);
+$curso = $obj_curso->encontrarPorId($_GET['id_curso']);
+$obj_perfil->valiAssinatura($login,$curso['id_curso']);
+$aulas =$aula->exibirTodosAulas($curso['id_curso']);
 $avaliacoes = $avaliacao->exibirTodosAvaliacoes($curso['id_curso']);
 $cont=count($aulas);
 $x=0;$y=0;$i=0;
-session_start();
-$login=$_SESSION['login'];
-include "back/cookie.php";
-cookie($login);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -53,7 +55,7 @@ cookie($login);
             <div class="aulas">
                 <?php foreach($aulas as $aula):?>
                     <h2>
-                        <a href="aula.php?id_aula=<?php echo $aula['id_aula']; ?>">
+                        <a href="aula.php?id_aula=<?php echo $aula['id_aula']; ?>" target="_parent">
                         <img class="img_play" src="../IMG/botao-play.png"><?php echo $aula['titulo_aula']; ?>
                         </a>
                     </h2>
@@ -61,8 +63,13 @@ cookie($login);
                     <p><?php echo nl2br($aula['descricao_aula']);?></p><br><br>
                     <?php foreach($avaliacoes as $avaliacao):?>
                         <?php if($avaliacao['id_aula']==$aula['id_aula']):?>
+                            <?php $confere=$obj_perfil->verificarHistorico($login,$avaliacao['id_avaliacao']);?>
                             <h2>
-                            <a href="avaliacao.php?id_avaliacao=<?php echo $avaliacao['id_avaliacao']; ?>">
+                            <?php if($confere==1):?>
+                                <a href="resultado.php?id_avaliacao=<?php echo $avaliacao['id_avaliacao']; ?>" target="_parent">
+                            <?php else:?>
+                                <a href="avaliacao.php?id_avaliacao=<?php echo $avaliacao['id_avaliacao']; ?>" target="_parent">
+                            <?php endif;?>
                             <img class="img_play" src="../IMG/teste.png"><?php echo $avaliacao['titulo_avaliacao']; ?>
                             </a>
                             </h2>
@@ -73,5 +80,13 @@ cookie($login);
                 <?php endforeach; ?>
             </div>
         </div>
+        <div vw class="enabled">
+                <div vw-access-button class="active"></div>
+                <div vw-plugin-wrapper>
+                    <div class="vw-plugin-top-wrapper"></div>
+                </div>
+            </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
     </body>
 </html>

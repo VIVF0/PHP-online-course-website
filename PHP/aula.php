@@ -1,12 +1,15 @@
 <?php
-require 'back/config.php';
-require 'back/exibir_aula.php';
-$obj_aula = new Aulas($mysql);
-$aulas = $obj_aula->encontrarPorId($_GET['id_aula']);
 session_start();
 $login=$_SESSION['login'];
 include "back/cookie.php";
+require 'back/config.php';
+require 'back/exibir_aula.php';
+require 'back/exibir_perfil.php';
 cookie($login);
+$obj_perfil = new Perfil($mysql);
+$obj_aula = new Aulas($mysql);
+$aulas = $obj_aula->encontrarPorId($_GET['id_aula']);
+$obj_perfil->valiAssinatura($login,$aulas['id_curso']);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -41,5 +44,13 @@ cookie($login);
             <br><br></div></center>
             <center><div class="video"><iframe src="<?php echo $aulas['link_video']; ?>" style="position:relative;left:0;width:100%;height:500px;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script></center>
             <br><br>
+            <div vw class="enabled">
+                <div wight="100px" vw-access-button class="active"></div>
+                <div vw-plugin-wrapper>
+                    <div class="vw-plugin-top-wrapper"></div>
+                </div>
+            </div>
+            <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+            <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
     </body>
 </html>

@@ -54,4 +54,28 @@ class Avaliacoes
         }
         return $opcao;
     }
+    public function respostas(string $id_cliente,string $id_avaliacao):array{
+        $result = mysqli_query($this->mysql,"SELECT * FROM respostas WHERE id_cliente=$id_cliente and id_avaliacao=$id_avaliacao"); 
+        $cont=mysqli_num_rows($result);
+        if($cont!=0){
+            for($i=0;$i<$cont;$i++){     
+                $opcao[$i]=mysqli_fetch_assoc($result);
+            }
+        }else{
+            $opcao[]=[
+                'titulo'=>'Não Encontrado!',
+                'descricao'=> 'O Curso não foi encontrado',
+                'id_curso'=> '0',
+            ];
+        }
+        return $opcao;
+    }
+    public function exibirHistorico(string $id,string $id_avaliacao): array
+    {
+        $selecionaHistorico = $this->mysql->prepare("SELECT * FROM historico WHERE id_cliente = ? and id_avaliacao=?");
+        $selecionaHistorico->bind_param('ss', $id,$id_avaliacao);
+        $selecionaHistorico->execute();
+        $historico = $selecionaHistorico->get_result()->fetch_assoc();
+        return $historico;
+    }
 }
