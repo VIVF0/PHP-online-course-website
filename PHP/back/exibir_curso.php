@@ -41,4 +41,10 @@ class Cursos
         }
         return $cursos;
     }
+    public function cursoAssinados(): array
+    {
+        $selecionaCurso = $this->mysql->query("SELECT id_curso, count(id_cliente) as 'assinantes' FROM assinatura GROUP BY id_curso");
+        $cursos = $selecionaCurso->fetch_all(MYSQLI_ASSOC);
+        return $cursos;
+    }
 }

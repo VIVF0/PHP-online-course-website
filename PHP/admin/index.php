@@ -10,6 +10,7 @@ $aula = new Aulas($mysql);
 $aulas = $aula->exibirAulas();
 $avaliacao = new Avaliacoes($mysql);
 $avaliacoes = $avaliacao->exibirAvaliacoes();
+$historico= $curso->cursoAssinados();
 ?>
 <!DOCTYPE html>
 <head lang="pt-br">
@@ -19,8 +20,28 @@ $avaliacoes = $avaliacao->exibirAvaliacoes();
         <link rel="stylesheet" type="text/css" href="../../CSS/admin.css">
     </head>
     <body>
+        <br><br><center><h1>Página Administrativa</h1></center>
         <br><div class="box">
-            <br><center><h1>Página Administrativa<br>Cursos:</h1></center>
+            <br><center><h1>Assinatura:</h1></center>
+        <br><br>
+            <div id="curso-admin">  
+                <center><Br><table border="1"> 
+                        <tr>
+                            <th>Curso</th>
+                            <th>Assinantes</th>
+                        </tr>
+                        <?php foreach ($historico as $hist) { ?>
+                            <?php $titulo=$curso->encontrarPorId($hist['id_curso'])?>
+                        <tr>
+                            <td><?php echo $titulo['titulo'];?></td>
+                            <td><?php echo $hist['assinantes'];?></td>
+                        </tr>
+                        <?php } ?>
+                    </table></center><Br>
+            </div><br><Br>
+        </div>
+        <br><div class="box">
+            <br><center><h1>Cursos:</h1></center>
         <div><br><br>
             <?php foreach ($cursos as $curt) { ?>
             <div id="curso-admin">
@@ -37,7 +58,6 @@ $avaliacoes = $avaliacao->exibirAvaliacoes();
         </div>
         <br><center><div class="botao-block"><a href="adicionar_curso.php">Adicionar Curso</a></div></center><br>
         </div>
-        
         <br><br>
         <br><div class="box">
             <br><center><h1>Aulas:</h1></center>

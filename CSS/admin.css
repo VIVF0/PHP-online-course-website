@@ -79,3 +79,17 @@ a:visited{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+table{
+    width: 80%;
+    font-size: 22px;
+}
+th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: black;
+    color: white;
+}
+td{
+    text-align: right; 
+}
