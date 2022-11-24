@@ -1,0 +1,64 @@
+*{
+	margin: 0;
+    padding: 0;
+}
+body{
+	font-family: "Helvetica Neue", "Helvetica", "Helvetica", "Arial", "sans-serif";
+	box-sizing: border-box;
+    width: 100%;    
+    min-height: 100vh; 
+}
+html{
+    --background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);
+}
+html[data-theme="dark"] {
+    --background: linear-gradient(180deg, rgba(10, 10, 10, 0.82) 0%, rgba(26, 24, 24, 0.98) 100%);;
+}
+html{
+    background: var(--background);
+}
+a:link{
+    color: rgb(231, 213, 213);
+    text-decoration: none;
+
+}
+a:hover{
+    background: -webkit-linear-gradient(180deg, #FDFBFB -28.46%, #00FFE0 141.69%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+a:visited{
+    color: rgba(241, 220, 220, 0.842);
+    text-decoration: none;
+}
+.container{
+    margin-top: 20px;
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    height: auto;
+    color: white;
+    font-size: 1.375rem;
+}
+.historico{
+    margin-left: 50rem;
+}
+table{
+    font-size: 1.375rem;
+    height: auto;
+    color: aliceblue;
+    border-color: #FDFBFB;
+    background: var(--background);
+    margin-top: 10rem;
+    position: absolute;
+}
+.assinatura{
+}
+th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+}
+td{
+    text-align: left; 
+}

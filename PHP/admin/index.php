@@ -28,13 +28,16 @@ $historico= $curso->cursoAssinados();
                 <center><Br><table border="1"> 
                         <tr>
                             <th>Curso</th>
-                            <th>Assinantes</th>
-                        </tr>
-                        <?php foreach ($historico as $hist) { ?>
-                            <?php $titulo=$curso->encontrarPorId($hist['id_curso'])?>
+                            <th>Alunos</th>
+                        </tr><?php $i=0;?>
+                        <?php foreach ($cursos as $curt) { ?>
                         <tr>
-                            <td><?php echo $titulo['titulo'];?></td>
-                            <td><?php echo $hist['assinantes'];?></td>
+                            <td><?php echo $curt['titulo'];?></td>
+                            <?php if(isset($historico[$i]['assinantes'])):?>
+                                <td class="valor"><?php echo $historico[$i]['assinantes'];?></td><?php $i+=1;?>
+                            <?php else: ?>
+                                <td class="valor">0</td>
+                            <?php endif;?>
                         </tr>
                         <?php } ?>
                     </table></center><Br>

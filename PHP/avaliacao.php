@@ -7,13 +7,17 @@ require 'back/exibir_avaliacoes.php';
 require 'back/exibir_perfil.php';
 require "back/validacao.php";
 include "back/redireciona.php";
-cookie($login);
+//cookie($login);
 $obj_avaliacao = new Avaliacoes($mysql);
 $obj_perfil = new Perfil($mysql);
 $avaliacao = $obj_avaliacao->encontrarPorId($_GET['id_avaliacao']);
 $obj_perfil->valiAssinatura($login,$avaliacao['id_curso']);
 $questoes=$obj_avaliacao->exibirQuestao($_GET['id_avaliacao']);
 $perfil= $obj_perfil->exibirPerfil($login);
+$confere=$obj_perfil->verificarHistorico($login,$avaliacao['id_avaliacao']);
+$direcionar=$avaliacao['id_avaliacao'];
+if($confere==1){
+    echo"<script language='javascript' type='text/javascript'>alert('Você já fez a prova, então só vai ser possivel ver o resultado da sua prova');window.location.href='resultado.php?id_avaliacao=$direcionar';</script>";}
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $notas = new valida($mysql);
     $nota=0;
@@ -24,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     date_default_timezone_set('America/Sao_Paulo');
     $date = date('Y-m-d H:i');
     $notas->insertnota($perfil['id_cliente'],$_GET['id_avaliacao'],$nota,$date);
+    $obj_perfil->validaFimCurso($login,$avaliacao['id_curso']);
     redireciona("resultado.php?id_avaliacao=".$avaliacao['id_avaliacao']);
 }
 ?>
@@ -72,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <?php $x+=1;?>
             <?php endforeach;?>
             <p>
-                <button class="botao">Enviar</button>
+                <button>Enviar</button>
             </p></form>
             </div><br>
             <script>

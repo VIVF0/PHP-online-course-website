@@ -91,5 +91,8 @@ th{
     color: white;
 }
 td{
-    text-align: right; 
+    text-align: left; 
+}
+td .valor{
+    text-align: center;
 }

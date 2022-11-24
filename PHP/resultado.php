@@ -6,7 +6,7 @@
     require "back/validacao.php";
     require 'back/exibir_avaliacoes.php';
     require 'back/exibir_perfil.php';
-    cookie($login);
+    //cookie($login);
     $perfils = new Perfil($mysql);
     $perfil= $perfils->exibirPerfil($login);
     $obj_avaliacao = new Avaliacoes($mysql);
@@ -38,10 +38,10 @@
             <object width="100%" height="100px" data="menu.php"></object>
        </nav>
         <br><center><div class="resultado"><h2><p>Resultado "<?php echo $avaliacao['titulo_avaliacao']?>": <?php echo $nota['nota'];?></p></h2></center></div>
-        <?php $x=1;?>
+        <?php $x=1;$y=0;?>
         <br><div class="container"><?php foreach($questoes as $questao):?>
                 <h3><?php echo $x?>. <?php echo $questao['enunciado'];?>?</h3>
-                <?php $i=1;$y=0;?>
+                <?php $i=1;?>
                 <?php $opcao=$obj_avaliacao->exibirOp($questao['id_questao'])?>
                 <?php foreach($opcao as $opcoes):?>
                     <?php if($resposta[$y]['opcao']==$opcoes['n_op']):?>
@@ -56,8 +56,8 @@
                         <br><p>&nbsp&nbsp&nbsp&nbsp<?php echo $i?>. <?php echo $opcoes['opcao'];?></p>
                         <br><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspJustificativa: <?php echo $opcoes['justificativa'];?></p>
                     <?php endif; ?>
-                    <?php $i+=1;$y=0;?>
-                <?php endforeach;?><br>
+                    <?php $i+=1; ?>
+                <?php endforeach;$y+=1;?><br>
                 <?php $x+=1;?>
             <?php endforeach;?></div>
     <div vw class="enabled">

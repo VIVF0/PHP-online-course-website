@@ -20,7 +20,7 @@
                 .logo{background: -webkit-linear-gradient(180deg, #FDFBFB -28.46%, #00FFE0 141.69%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;text-align: center;font-size: 35px;}
                 *{margin: 0; padding: 0;}
                 body{font-family: arial, helvetica, sans-serif;font-size: 12px;}
-                nav{width: 100%;height: 100px;background: linear-gradient(180deg, #001AFF 0%, rgba(47, 162, 187, 0.88) 100%);  position: fixed;font-family: "Helvetica Neue", "Helvetica", "Helvetica", "Arial", "sans-serif";}
+                nav{width: 100%;height: 100px;background: linear-gradient(180deg, #001AFF 0%, rgba(47, 162, 187, 0.88) 100%);/*background: black;*/  position: fixed;font-family: "Helvetica Neue", "Helvetica", "Helvetica", "Arial", "sans-serif";}
                 .menu{list-style:none;float:left;}
                 .menu li a{color:white; text-decoration:none; padding:5px 10px; display:block;}
                 .menu li a:hover{background:#333;color:#fff;-moz-box-shadow:0 3px 10px 0 #CCC;-webkit-box-shadow:0 3px 10px 0 #ccc;text-shadow:0px 0px 5px #fff;}

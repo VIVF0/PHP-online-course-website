@@ -63,15 +63,8 @@ $x=0;$y=0;$i=0;
                     <p><?php echo nl2br($aula['descricao_aula']);?></p><br><br>
                     <?php foreach($avaliacoes as $avaliacao):?>
                         <?php if($avaliacao['id_aula']==$aula['id_aula']):?>
-                            <?php $confere=$obj_perfil->verificarHistorico($login,$avaliacao['id_avaliacao']);?>
-                            <h2>
-                            <?php if($confere==1):?>
-                                <a href="resultado.php?id_avaliacao=<?php echo $avaliacao['id_avaliacao']; ?>" target="_parent">
-                            <?php else:?>
-                                <a href="avaliacao.php?id_avaliacao=<?php echo $avaliacao['id_avaliacao']; ?>" target="_parent">
-                            <?php endif;?>
-                            <img class="img_play" src="../IMG/teste.png"><?php echo $avaliacao['titulo_avaliacao']; ?>
-                            </a>
+                            <h2><a href="avaliacao.php?id_avaliacao=<?php echo $avaliacao['id_avaliacao']; ?>" target="_parent">
+                            <img class="img_play" src="../IMG/teste.png"><?php echo $avaliacao['titulo_avaliacao']; ?></a>
                             </h2>
                             <br>
                             <p><?php echo nl2br($avaliacao['descricao_avaliacao']);?></p><br><br>
