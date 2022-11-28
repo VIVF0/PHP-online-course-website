@@ -25,7 +25,7 @@
     $dados .= "<h3>(12)23636996</h3>";
     foreach($cont as $conteudo){
     extract($conteudo);
-    $dados .= "Certificamos que ".$conteudo['nome']." concluiu o curso online (".$conteudo['curso'].") de carga horaria
+    $dados .= "Certificamos que ".$conteudo['nome']." concluiu o curso online '".$conteudo['curso']."' de carga horaria
     aproximada de ".$conteudo['carga_horaria'].", foi avaliado as seguintes materias:<br>";
     }
     foreach($avaliacoes as $av){
@@ -33,21 +33,22 @@
         $dados .= "<br>Avaliação: ".$av['titulo_avaliacao']."<br>";  
         $dados .= "Descrição: ".$av['descricao_avaliacao']."<br>"; 
         }
-    $dados .= "<br><br><center><img src='../../IMG/Coordenador.jpg'></center>";
+    //$var="https://github.com/VIVF0/Job-for-All/blob/main//IMG/Coordenador.jpg?raw=true";
+    
+    //$dados .= "<br><br><center><img src=$var></center>";
     $dados .= "</body>";
-    $dados .= "</html>";
+    
     // Referenciar o namespace Dompdf
     use Dompdf\Dompdf;
 
     // Instanciar e usar a classe dompdf
-    $dompdf = new Dompdf(['enable_remote' => true]);
+    $dompdf = new Dompdf([ 'isRemoteEnabled' => true]);
 
     // Instanciar o metodo loadHtml e enviar o conteudo do PDF
     $dompdf->loadHtml($dados);
 
     // Configurar o tamanho e a orientacao do papel
     // landscape - Imprimir no formato paisagem
-    //$dompdf->setPaper('A4', 'landscape');
     // portrait - Imprimir no formato retrato
     $dompdf->setPaper('A4', 'portrait');
 
