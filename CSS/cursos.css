@@ -69,5 +69,5 @@ input{
     margin-right: auto;
     overflow: hidden;
     text-overflow: ellipsis; 
-    height: 80%;
+    height: auto;
 }

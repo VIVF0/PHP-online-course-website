@@ -37,42 +37,49 @@ $historico=$perfils->exibirHistorico($perfil['id_cliente']);
             <object width="100%" height="100px" data="menu.php"></object>
         </nav>
         <div class="container">
-            <img src="">
-            <p>Nome: <?php echo $perfil['nome'];?><br><br>
+        <div class="cont">   
+        <br><p>Nome: <?php echo $perfil['nome'];?><br><br>
             Email: <?php echo $perfil['usuario'];?></p>
-        </div>
-        <div class="assinatura">
-            <table border="1"> 
+            <div class='tabela'>
+            <table> 
                 <tr>
-                    <th>Curso</th>
-                    <th>Status</th>
+                    <th>&nbspCurso&nbsp</th>
+                    <th>&nbspStatus do Curso&nbsp</th>
+                    <th class="botao"></th>
                 </tr>
             <?php foreach($assinatura as $assi): ?>
-                <?php $curso=$curso->encontrarPorId($assi['id_curso']);?>
+                <?php $cursos=$curso->encontrarPorId($assi['id_curso']);?>
                 <tr>
-                    <td><p><?php echo $curso['titulo']; ?>&nbsp</p></td>
-                    <td>Ativo</td>
+                    <td><p>&nbsp<?php echo $cursos['titulo']; ?>&nbsp</p></td>
+                    <td><p>&nbsp<?php echo $assi['status_curso']; ?>&nbsp</p></td>
+                    <td class='bt'><?php if($assi['status_curso']=='COMPLETO'):?>
+                        <form action="back/pdf.php" method="POST"><input type="hidden" id="nome_cliente" name="nome_cliente" value="<?php echo $perfil['nome']; ?>">
+                        <input type="hidden" id="curso_titulo" name="curso_titulo" value="<?php echo $cursos['titulo']; ?>">
+                        <input type="hidden" id="carga_horaria" name="carga_horaria" value="<?php echo $cursos['carga_horario']; ?>">
+                        <input type="hidden" id="id_curso" name="id_curso" value="<?php echo $cursos['id_curso']; ?>">
+                        <button>Certificado</button></form>
+                    <?php endif; ?></td>
                 </tr>
             <?php endforeach;?>
-            </table>
-        </div>
-        <div class="historico">
-            <table border="1"> 
+            </table></div>
+            
+            <div class='prova'>
+            <table> 
                 <tr>
-                    <th><p>Avaliação</p></th>
-                    <th><p>Nota&nbsp&nbsp</p></th>
-                    <th><p>Horario e Data</p></th>
+                    <th><p>&nbspAvaliação</p></th>
+                    <th><p>&nbspNota&nbsp&nbsp</p></th>
+                    <th><p>&nbspHorario e Data</p></th>
                 </tr>
             <?php foreach($historico as $hist): ?>
                 <?php $Avaliacao=$avaliacao->encontrarPorId($hist['id_avaliacao']);?>
                 <tr>
-                    <td><p><?php echo $Avaliacao['titulo_avaliacao']; ?>&nbsp</p></td>
-                    <td><p><?php echo $hist['nota']; ?></p></td>
-                    <td><p><?php echo $hist['hora_data']; ?>&nbsp</p></td>
+                    <td><p>&nbsp<?php echo $Avaliacao['titulo_avaliacao']; ?>&nbsp</p></td>
+                    <td><p>&nbsp<?php echo $hist['nota']; ?></p></td>
+                    <td><p>&nbsp<?php echo $hist['hora_data']; ?>&nbsp</p></td>
                 </tr>
             <?php endforeach;?>
-            </table>
-        </div>
+            </table></div>
+            </div> </div>
         <div vw class="enabled">
                 <div vw-access-button class="active"></div>
                 <div vw-plugin-wrapper>

@@ -33,32 +33,83 @@ a:visited{
 }
 .container{
     margin-top: 20px;
-    width: 75%;
-    margin-right: auto;
-    margin-left: auto;
+    width: 60%;
     height: auto;
     color: white;
     font-size: 1.375rem;
-}
-.historico{
-    margin-left: 50rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: var(--background);
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
 }
 table{
+    align-items: center;
     font-size: 1.375rem;
     height: auto;
     color: aliceblue;
-    border-color: #FDFBFB;
-    background: var(--background);
-    margin-top: 10rem;
-    position: absolute;
+    position: flex;
 }
-.assinatura{
+.cont{
+    align-items: stretch;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+.tabela{
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+button{
+    border:1px solid  #FDFBFB;
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 5px;
+    color: white;
+    background: var(--background);
+    display: block;
+    transition-duration: 0.4s;
+    position: relative;
+    align-content: right;
+}
+button:hover{
+    border:none!important;
+    color: black;
+    background: white;
+    box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24), 0 17px 50px 0 rgba(255, 255, 255, 0.19);
+}
+button:active{
+    border:none!important;
+    background: black;
+    color: white;
+}
+.prova{
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
 }
 th{
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
+    border:1px solid  #FDFBFB;
 }
 td{
     text-align: left; 
+    border:1px solid  #FDFBFB;
+}
+th.botao{
+    border:none;
+    align-items: center;
+    background: none;
+}
+td.bt{
+    border:none;
+    background: none;
 }

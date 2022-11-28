@@ -50,7 +50,7 @@ cookie($login);
                             </a>
                         </h2>
                         <p>
-                            <?php echo nl2br($curso['descricao']); ?>
+                            <?php echo nl2br($curso['descricao']); ?><br>
                         </p>
                     </div>
                 </div>
