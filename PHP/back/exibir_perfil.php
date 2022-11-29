@@ -56,7 +56,7 @@ class Perfil
         if(!isset($assinante)){
             echo"<script language='javascript' type='text/javascript'>
             alert('É necessario assinar o curso para poder acessar este conteúdo!');window.location
-            .href='http://localhost/Job%20for%20All/Job-for-All/index.php';</script>";
+            .href='formulario de pagamento.php';</script>";
         }
     }
     public function exibirAssinatura(string $login):array{

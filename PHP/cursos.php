@@ -34,7 +34,6 @@ cookie($login);
         <nav>
             <!--Menu-->
             <object width="100%" height="100px" data="menu.php"></object>
-            <!--Carrosel-->
        </nav>
         <center><div class="container">
             <form action="cursos.php" id="buscar_curso" method="POST" name="Pesquisa">    
