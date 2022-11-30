@@ -1,0 +1,90 @@
+*{
+	margin: 0;
+    padding: 0;
+}
+body{
+	font-family: "Helvetica Neue", "Helvetica", "Helvetica", "Arial", "sans-serif";
+	box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh; 
+}
+html{
+    --background: linear-gradient(180deg, rgba(4, 112, 174, 0.82) 0%, rgba(5, 39, 248, 0.98) 100%);
+}
+html[data-theme="dark"] {
+    --background: linear-gradient(180deg, rgba(10, 10, 10, 0.82) 0%, rgba(26, 24, 24, 0.98) 100%);;
+}
+html{
+    background: var(--background);
+}
+.fundo{
+    background: var(--background);
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px 40px;
+    height: 80%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border-radius: 25px;
+}
+.Pagamento{
+    color:white;
+    font-size: 20px;
+}
+button{
+    border:none!important;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 20px;
+    color: white;
+    background: rgba(118, 197, 243, 0.822);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    transition-duration: 0.4s;
+    position: relative;
+}
+button:hover{
+    border:none!important;
+    color: black;
+    background: white;
+    box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24), 0 17px 50px 0 rgba(255, 255, 255, 0.19);
+}
+button:active{
+    border:none!important;
+    background: black;
+    color: white;
+}
+.preenchimento{
+    text-align: justify;
+    color:white;
+    font-size: 20px;
+}
+input{
+    background-color:white;
+    width: 60%;
+    font-size: 20px;
+    margin-left: 20px;
+    color:black;
+    display: flex;
+    align-items: stretch;
+}
+select{
+    background-color:white;
+    width: 60%;
+    font-size: 20px;
+    margin-left: 20px;
+    color:black
+}
+option{
+    background-color:white;
+    width: 60%;
+    font-size: 20px;
+    margin-left: 20px;
+    color:black
+}
+h2{
+    color: white;
+}

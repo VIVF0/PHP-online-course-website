@@ -1,0 +1,3 @@
+<?php
+    define('SAND_KEY','TEST-2bc810cf-54b3-4cd7-b1b6-c79b8d4bddf5');
+    define('SAND_TOKEN','TEST-1235464493050577-113011-ab10a65384a0363eaafdbd28ca0c8117-1018300250');

@@ -1,6 +1,6 @@
 <?php
 // Carregar o Composer
-    require '../../vendor/autoload.php';
+    require '../../pdf/vendor/autoload.php';
     require 'config.php';
     require 'exibir_avaliacoes.php';
     $avaliacao = new Avaliacoes($mysql);

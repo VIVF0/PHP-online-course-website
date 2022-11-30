@@ -17,7 +17,7 @@ class Perfil
         $perfil = $selecionaPerfil->get_result()->fetch_assoc();
         return $perfil;
     }
-    public function exibirHistorico(string $id): array
+    public function exibirHistorico(string $id)
     {
         $result = mysqli_query($this->mysql,"SELECT * FROM historico WHERE id_cliente = $id"); 
         $cont=mysqli_num_rows($result);
@@ -25,12 +25,8 @@ class Perfil
             for($i=0;$i<$cont;$i++){
                 $historico[$i]=mysqli_fetch_assoc($result);
             }
-        }else{
-            $historico[]=[
-                'id_cliente'=>0,
-            ];
+            return $historico;
         }
-        return $historico;
     }
     public function verificarHistorico(string $login,string $id_avaliacao): bool
     {
@@ -59,7 +55,7 @@ class Perfil
             .href='formulario de pagamento.php';</script>";
         }
     }
-    public function exibirAssinatura(string $login):array{
+    public function exibirAssinatura(string $login){
         $verifica= new Perfil($this->mysql);
         $id=$verifica->exibirPerfil($login);
         $result = mysqli_query($this->mysql,"SELECT * FROM assinatura where id_cliente=".$id['id_cliente']); 
@@ -68,12 +64,8 @@ class Perfil
             for($i=0;$i<$cont;$i++){
                 $assinatura[$i]=mysqli_fetch_assoc($result);
             }
-        }else{
-            $assinatura[]=[
-                'id_cliente'=>0,
-            ];
-        }
-        return $assinatura;
+            return $assinatura;
+        } 
     }
     public function validaFimCurso(string $login,string $id_curso):void{
         $verifica= new Perfil($this->mysql);
@@ -105,28 +97,4 @@ class Perfil
             $inserSitu->execute();
         }
     }
-    /*public function pdf():void{
-        include '../../vendor/autoload.php';
-    
-        // Referenciar o namespace Dompdf
-        use Dompdf\Dompdf;
-    
-        // Instanciar e usar a classe dompdf
-        $dompdf = new Dompdf();
-    
-        // Instanciar o metodo loadHtml e enviar o conteudo do PDF
-        $dompdf->loadHtml('Celke - Gerar PDF com PHP');
-    
-        // Configurar o tamanho e a orientacao do papel
-        // landscape - Imprimir no formato paisagem
-        //$dompdf->setPaper('A4', 'landscape');
-        // portrait - Imprimir no formato retrato
-        $dompdf->setPaper('A4', 'portrait');
-    
-        // Renderizar o HTML como PDF
-        $dompdf->render();
-    
-        // Gerar o PDF
-        $dompdf->stream();
-    }*/
 }

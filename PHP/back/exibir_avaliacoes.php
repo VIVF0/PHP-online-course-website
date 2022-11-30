@@ -48,8 +48,8 @@ class Avaliacoes
         }else{
             $opcao[]=[
                 'titulo'=>'Não Encontrado!',
-                'descricao'=> 'O Curso não foi encontrado',
-                'id_curso'=> '0',
+                'descricao'=> 'A opção não foi encontrado',
+                'id_opcao'=> '0',
             ];
         }
         return $opcao;
@@ -64,13 +64,13 @@ class Avaliacoes
         }else{
             $opcao[]=[
                 'titulo'=>'Não Encontrado!',
-                'descricao'=> 'O Curso não foi encontrado',
-                'id_curso'=> '0',
+                'descricao'=> 'A resposta não foi encontrado',
+                'id_resposta'=> '0',
             ];
         }
         return $opcao;
     }
-    public function exibirHistorico(string $id,string $id_avaliacao): array
+    public function exibirHistorico(string $id,string $id_avaliacao):array
     {
         $selecionaHistorico = $this->mysql->prepare("SELECT * FROM historico WHERE id_cliente = ? and id_avaliacao=?");
         $selecionaHistorico->bind_param('ss', $id,$id_avaliacao);

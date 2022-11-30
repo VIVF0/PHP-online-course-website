@@ -49,7 +49,7 @@
                 <?php else:?>
                     <li><a href="../HTML/formulario de login.html" target="_parent"><img src="../IMG/menu/botao-redondo-da-conta-com-o-usuario-dentro.png">Entrar</a></li>
                 <?php endif;?>
-                <li><a href="../HTML/doacao.html" target="_parent"><img src="../IMG/menu/mao.png">Doar</a></li>
+                <li><a href="formulario de pagamento.php" target="_parent"><img src="../IMG/menu/comprar-online.png">Comprar</a></li>
                 <li><a href="cursos.php" target="_parent"><img src="../IMG/menu/curso-online.png">Cursos</a></li>
                 <li><a href="../HTML/ajuda.html" target="_parent"><img src="../IMG/menu/ajuda.png">Contato</a></li>
             </ul></div>
